@@ -11,12 +11,6 @@ const componentExists = require('../utils/componentExists');
 module.exports = {
   description: 'Add an unconnected component',
   prompts: [{
-    type: 'list',
-    name: 'type',
-    message: 'Select the type of component',
-    default: 'Stateless Function',
-    choices: () => ['Stateless Function', 'ES6 Class'],
-  }, {
     type: 'input',
     name: 'name',
     message: 'What should it be called?',
@@ -31,21 +25,7 @@ module.exports = {
   }],
   actions: (data) => {
     // Generate index.js and index.test.js
-    let componentTemplate;
-
-    switch (data.type) {
-      case 'ES6 Class': {
-        componentTemplate = './component/es6.pure.js.hbs';
-        break;
-      }
-      case 'Stateless Function': {
-        componentTemplate = './component/stateless.js.hbs';
-        break;
-      }
-      default: {
-        componentTemplate = './component/es6.pure.js.hbs';
-      }
-    }
+    let componentTemplate = './component/es6.pure.js.hbs';
 
     const actions = [{
       type: 'add',
