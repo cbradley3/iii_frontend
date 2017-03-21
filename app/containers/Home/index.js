@@ -55,7 +55,10 @@ export default class Home extends React.PureComponent {
       color:"#eeeeee",
       fontSize:"5em",
       fontFamily:"Source Sans Pro",
-      fontWeight:"lighter",
+      fontStyle:"light",
+      fontWeight:"400",
+      textTransform:"uppercase",
+      letterSpacing:"6px",
       textAlign:"center",
       marginTop:"160px"
     }
@@ -66,14 +69,109 @@ export default class Home extends React.PureComponent {
       textAlign:"center",
       marginTop:"30px"
     }
+    /*const navStyle={
+      display: "flex",
+      paddingRight:"10px",
+      textDecoration:"none",
+      color:"#000000",
+      fontSize:".75em",
+      fontFamily:"Josefin Sans",
+      fontStyle:"light",
+      fontWeight:"300",
+      textAlign:"right",
+      textTransform:"uppercase",
+      letterSpacing:"2px",
+      Uposition:"relative"
+    }*/
+
     return (
       <div>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
         <header>
-          <nav>
-          <Link to="/"> Home </Link>
-          <Link to="/About"> About </Link>
-          </nav>
+          <div>
+            <nav>
+            <Link to="/" style={{
+              display: "flex",
+              flexDirection:"column",
+              paddingRight:"10px",
+              textDecoration:"none",
+              color:"#000000",
+              fontSize:".75em",
+              fontFamily:"Josefin Sans",
+              fontStyle:"light",
+              fontWeight:"300",
+              textAlign:"right",
+              textTransform:"uppercase",
+              letterSpacing:"2px",
+                textDecoration:'none'}}>
+                Main
+            </Link>
+            <Link to="/Photography" style={{
+              display: "flex",
+                  flexDirection:"column",
+              paddingRight:"10px",
+              textDecoration:"none",
+              color:"#000000",
+              fontSize:".75em",
+              fontFamily:"Josefin Sans",
+              fontStyle:"light",
+              fontWeight:"300",
+              textAlign:"right",
+              textTransform:"uppercase",
+              letterSpacing:"2px",
+                textDecoration:'none'}}>
+                Photography
+            </Link>
+            <Link to="/Design" style={{
+              display: "flex",
+                  flexDirection:"column",
+              paddingRight:"10px",
+              textDecoration:"none",
+              color:"#000000",
+              fontSize:".75em",
+              fontFamily:"Josefin Sans",
+              fontStyle:"light",
+              fontWeight:"300",
+              textAlign:"right",
+              textTransform:"uppercase",
+              letterSpacing:"2px",
+                textDecoration:'none'}}>
+                Design
+            </Link>
+            <Link to="/Art" style={{
+              display: "flex",
+                  flexDirection:"column",
+              paddingRight:"10px",
+              textDecoration:"none",
+              color:"#000000",
+              fontSize:".75em",
+              fontFamily:"Josefin Sans",
+              fontStyle:"light",
+              fontWeight:"300",
+              textAlign:"right",
+              textTransform:"uppercase",
+              letterSpacing:"2px",
+                textDecoration:'none'}}>
+                Art
+            </Link>
+            <Link to="/Development" style={{
+              display: "flex",
+                flexDirection:"column",
+              paddingRight:"10px",
+              textDecoration:"none",
+              color:"#000000",
+              fontSize:".75em",
+              fontFamily:"Josefin Sans",
+              fontStyle:"light",
+              fontWeight:"300",
+              textAlign:"right",
+              textTransform:"uppercase",
+              letterSpacing:"2px",
+                textDecoration:'none'}}>
+                Devolopment
+            </Link>
+            </nav>
+          </div>
         </header>
         <main style={mainStyle}>
 
