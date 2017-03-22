@@ -17,6 +17,7 @@ export default class Home extends React.PureComponent {
       backgroundAttachment:"fixed",
       backgroundPosition:"center",
       backgroundRepeat:"no-repeat",
+
     }
     const divStyle2={
       width:"100%",
@@ -139,8 +140,26 @@ export default class Home extends React.PureComponent {
       fontFamily:"Open Sans",
       fontWeight:"700",
       textAlign:"center",
+      textTransform:"uppercase",
       marginTop:"30px",
       letterSpacing:"2px"
+    }
+    const footerStyle={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"space-around",
+      height:"100px",
+      alignItems:"center",
+      paddingRight:"10px",
+      textDecoration:"none",
+      color:"#000000",
+      fontSize:"1.10em",
+      fontFamily:"Josefin Sans",
+      fontStyle:"light",
+      fontWeight:"300",
+      textAlign:"right",
+      textTransform:"uppercase",
+      letterSpacing:"2px",
     }
     return (
       <div>
@@ -230,6 +249,38 @@ export default class Home extends React.PureComponent {
                 textDecoration:'none'}}>
                   Devolopment
               </Link>
+              <Link to="/Contact" style={{
+                display:"flex",
+                flexDirection:"row",
+                paddingRight:"10px",
+                textDecoration:"none",
+                color:"#000000",
+                fontSize:".75em",
+                fontFamily:"Josefin Sans",
+                fontStyle:"light",
+                fontWeight:"300",
+                textAlign:"right",
+                textTransform:"uppercase",
+                letterSpacing:"2px",
+                textDecoration:'none'}}>
+                  Contact
+              </Link>
+              <Link to="/Blog" style={{
+                display:"flex",
+                flexDirection:"row",
+                paddingRight:"10px",
+                textDecoration:"none",
+                color:"#000000",
+                fontSize:".75em",
+                fontFamily:"Josefin Sans",
+                fontStyle:"light",
+                fontWeight:"300",
+                textAlign:"right",
+                textTransform:"uppercase",
+                letterSpacing:"2px",
+                textDecoration:'none'}}>
+                  Blog
+              </Link>
               </nav>
           </div>
         </header>
@@ -259,12 +310,6 @@ export default class Home extends React.PureComponent {
             <div style={titleStyle}> art </div>
           </div>
           <div style={divStyle6}>
-            <img src="http://h4z.it/Thumb/cd1a22_55978b6f8rev.jpg"/>
-            <img src="http://h4z.it/Image/f3a635_af8af957crev.jpg"/>
-            <img src="http://h4z.it/Image/97e5d0_bb2729ac4rev.jpg"/>
-
-
-
           </div>
           <div style={divStyle7}>
             <div style={titleStyle}> Development </div>
@@ -284,9 +329,9 @@ export default class Home extends React.PureComponent {
         <footer>
 
           <div>
-           <nav style={navStyle}>
+           <nav style={footerStyle}>
 
-            <Link to="/" style={{
+            <Link to="/Contact" style={{
               display:"flex",
               flexDirection:"row",
               paddingRight:"10px",
@@ -300,7 +345,7 @@ export default class Home extends React.PureComponent {
               textTransform:"uppercase",
               letterSpacing:"2px",
                 textDecoration:'none'}}>
-                Main
+                contact
             </Link>
             <Link to="/Photography" style={{
               display:"flex",
@@ -365,6 +410,22 @@ export default class Home extends React.PureComponent {
               letterSpacing:"2px",
               textDecoration:'none'}}>
                 Devolopment
+            </Link>
+            <Link to="/Blog" style={{
+              display:"flex",
+              flexDirection:"row",
+              paddingRight:"10px",
+              textDecoration:"none",
+              color:"#000000",
+              fontSize:".75em",
+              fontFamily:"Josefin Sans",
+              fontStyle:"light",
+              fontWeight:"300",
+              textAlign:"right",
+              textTransform:"uppercase",
+              letterSpacing:"2px",
+              textDecoration:'none'}}>
+                Blog
             </Link>
             </nav>
         </div>
