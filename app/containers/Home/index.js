@@ -6,8 +6,14 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
+import Responsive from 'react-responsive';
 import {Link} from "react-router";
+import FlatButton from "material-ui/FlatButton";
 export default class Home extends React.PureComponent {
+  handleButton = () => {
+    window.scroll(0,0);
+  }
+
   render() {
     const divStyle={
       width:"100%",
@@ -22,11 +28,11 @@ export default class Home extends React.PureComponent {
     const divStyle2={
       width:"100%",
       height:"250px",
-      background:"rgba(255, 255, 255, 1.00)"
+      background:"rgba(0, 0, 0, 0.03)"
     }
     const divStyle3={
       width:"100%",
-      height:"700px",
+      height:"600px",
       background:"url(http://h4z.it/Image/35e950_DSC_0266rev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
@@ -36,7 +42,11 @@ export default class Home extends React.PureComponent {
     const divStyle4={
       width:"100%",
       height:"800px",
-      background:"rgba(255, 255, 255, 1.00)"
+      background:"rgba(255, 255, 255, 1.00)",
+      display:"flex",
+      flexDirection:"row",
+      flexWrap:"wrap",
+      justifyContent:"space-around",
     }
     const divStyle5={
       width:"100%",
@@ -49,11 +59,11 @@ export default class Home extends React.PureComponent {
     }
     const divStyle6={
       width:"100%",
-      height:"500px",
+      height:"700px",
       background:"rgba(255, 255, 255, 1.00)",
       display:"flex",
-      flexDirection:"column",
-      flexWrap:"wrap"
+      flexWrap:"wrap",
+      justifyContent:"space-around",
     }
     const divStyle7={
       width:"100%",
@@ -62,17 +72,16 @@ export default class Home extends React.PureComponent {
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
       backgroundPosition:"center",
-      backgroundRepeat:"no-repeat",
+      backgroundRepeat:"no-repeat"
     }
-      const divStyle8={
-        width:"100%",
-        height:"225px",
-        background:"rgba(255, 255, 255, 1.00)"
+    const divStyle8={
+      width:"100%",
+      height:"225px",
+      background:"rgba(0, 0, 0, 0.03)"
     }
     const divStyle9={
-      width:"100%px",
-      height:"150px",
-      background:"rgba(63, 191, 127, 1.00)"
+      display:"flex",
+      justifyContent:"center"
   }
     const mainStyle={
       display:"flex",
@@ -148,6 +157,7 @@ export default class Home extends React.PureComponent {
       display:"flex",
       flexDirection:"row",
       justifyContent:"space-around",
+      backgroundColor:"rgba(0, 0, 0, 0.10)",
       height:"100px",
       alignItems:"center",
       paddingRight:"10px",
@@ -161,9 +171,31 @@ export default class Home extends React.PureComponent {
       textTransform:"uppercase",
       letterSpacing:"2px",
     }
+    const imageStyle={
+      width:"15%",
+      height:"65%",
+      marginTop:"125px",
+      marginBottom:"10px"
+    }
+    const imageStyle2={
+      width:"26%",
+      height:"22%",
+      marginTop:"80px",
+      marginBottom:"10px"
+    }
+    const imageStyle3={
+      width:"26%",
+      height:"40%",
+      marginTop:"80px",
+      marginBottom:"100px"
+    }
     return (
       <div>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
+
+
+
+
         <header>
           <div style={headStyle}>
             <img style={logoStyle} src="http://h4z.it/Image/f02f70_llustration3.png"/>
@@ -247,7 +279,7 @@ export default class Home extends React.PureComponent {
                 textTransform:"uppercase",
                 letterSpacing:"2px",
                 textDecoration:'none'}}>
-                  Devolopment
+                  Development
               </Link>
               <Link to="/Contact" style={{
                 display:"flex",
@@ -301,32 +333,52 @@ export default class Home extends React.PureComponent {
               <p style={mottoStyle}> Design good. </p>
             </div>
           </div>
+
           <div style={divStyle3}>
             <div style={titleStyle}> design </div>
           </div>
 
-          <div style={divStyle4}></div>
+          <div style={divStyle4}>
+            <img style={imageStyle2} src="http://h4z.it/Image/683e01_va_Rose_logo.jpg"/>
+            <img style={imageStyle2} src="http://h4z.it/Image/fc0c42_uby_Red_logo.png"/>
+            <img style={imageStyle2} src="http://h4z.it/Image/02bf48__awards_logo.jpg"/>
+            <img style={imageStyle3} src="http://h4z.it/Image/4e5f82_Daniel_small.jpg"/>
+            <img style={imageStyle3} src="http://h4z.it/Image/3036b4_awards_small.jpg"/>
+            <img style={imageStyle3} src="http://h4z.it/Image/1bc408_ue_Max_small.jpg"/>
+          </div>
+
           <div style={divStyle5}>
             <div style={titleStyle}> art </div>
           </div>
+
           <div style={divStyle6}>
+            <img style={imageStyle} src="http://h4z.it/Thumb/cd1a22_55978b6f8rev.jpg"/>
+            <img style={imageStyle} src="http://h4z.it/Image/f3a635_af8af957crev.jpg"/>
+            <img style={imageStyle} src="http://h4z.it/Image/97e5d0_bb2729ac4rev.jpg"/>
           </div>
+
           <div style={divStyle7}>
             <div style={titleStyle}> Development </div>
           </div>
+
           <div style={divStyle8}>
             <div style={bodyStyle}>
               <p style={bodyStyle}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
               <p style={bodyStyle}> HTML | Cascading Style Sheets (CSS) | Javascript | </p>
               <p style={bodyStyle}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
             </div>
-            <div style={mottoStyle}>
+              <div style={mottoStyle}>
               <p style={mottoStyle}> Design good. </p>
-            </div>
+              </div>
           </div>
-          <div style={divStyle9}></div>
+
+          <div style={divStyle9}>
+            <FlatButton label="Go to Top" onTouchTap={this.handleButton}/>
+
+          </div>
         </main>
         <footer>
+
 
           <div>
            <nav style={footerStyle}>
@@ -409,7 +461,7 @@ export default class Home extends React.PureComponent {
               textTransform:"uppercase",
               letterSpacing:"2px",
               textDecoration:'none'}}>
-                Devolopment
+                Development
             </Link>
             <Link to="/Blog" style={{
               display:"flex",
