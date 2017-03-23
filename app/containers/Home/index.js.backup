@@ -23,36 +23,14 @@ export default class Home extends React.PureComponent {
       backgroundAttachment:"fixed",
       backgroundPosition:"center",
       backgroundRepeat:"no-repeat",
-    }
-    const divStyleMobile={
-      width:"100%",
-      height:"600px",
-      background:"url(http://h4z.it/Image/c98c04_DSC_0785rev.jpg)",
-      backgroundSize:"cover",
-      backgroundAttachment:"fixed",
-      backgroundPosition:"center",
-      backgroundRepeat:"no-repeat",
+
     }
     const divStyle2={
       width:"100%",
       height:"250px",
       background:"rgba(0, 0, 0, 0.03)"
     }
-    const divStyle2Mobile={
-      width:"100%",
-      height:"250px",
-      background:"rgba(0, 0, 0, 0.03)"
-    }
     const divStyle3={
-      width:"100%",
-      height:"600px",
-      background:"url(http://h4z.it/Image/35e950_DSC_0266rev.jpg)",
-      backgroundSize:"cover",
-      backgroundAttachment:"fixed",
-      backgroundPosition:"center",
-      backgroundRepeat:"no-repeat"
-    }
-    const divStyle3Mobile={
       width:"100%",
       height:"600px",
       background:"url(http://h4z.it/Image/35e950_DSC_0266rev.jpg)",
@@ -70,25 +48,7 @@ export default class Home extends React.PureComponent {
       flexWrap:"wrap",
       justifyContent:"space-around",
     }
-    const divStyle4Mobile={
-      width:"100%",
-      height:"800px",
-      background:"rgba(255, 255, 255, 1.00)",
-      display:"flex",
-      flexDirection:"row",
-      flexWrap:"wrap",
-      justifyContent:"space-around",
-    }
     const divStyle5={
-      width:"100%",
-      height:"600px",
-      background:"url(http://h4z.it/Image/c7fe84_da443c74crev.jpg)",
-      backgroundSize:"cover",
-      backgroundAttachment:"fixed",
-      backgroundPosition:"center",
-      backgroundRepeat:"no-repeat",
-    }
-    const divStyle5Mobile={
       width:"100%",
       height:"600px",
       background:"url(http://h4z.it/Image/c7fe84_da443c74crev.jpg)",
@@ -105,24 +65,7 @@ export default class Home extends React.PureComponent {
       flexWrap:"wrap",
       justifyContent:"space-around",
     }
-    const divStyle6Mobile={
-      width:"100%",
-      height:"700px",
-      background:"rgba(255, 255, 255, 1.00)",
-      display:"flex",
-      flexWrap:"wrap",
-      justifyContent:"space-around",
-    }
     const divStyle7={
-      width:"100%",
-      height:"600px",
-      background:"url(http://h4z.it/Image/645fa8_IMG_9509rev.jpg)",
-      backgroundSize:"cover",
-      backgroundAttachment:"fixed",
-      backgroundPosition:"center",
-      backgroundRepeat:"no-repeat"
-    }
-    const divStyle7Mobile={
       width:"100%",
       height:"600px",
       background:"url(http://h4z.it/Image/645fa8_IMG_9509rev.jpg)",
@@ -136,19 +79,10 @@ export default class Home extends React.PureComponent {
       height:"225px",
       background:"rgba(0, 0, 0, 0.03)"
     }
-    const divStyle8Mobile={
-      width:"100%",
-      height:"225px",
-      background:"rgba(0, 0, 0, 0.03)"
-    }
     const divStyle9={
       display:"flex",
       justifyContent:"center"
-    }
-    const divStyle9Mobile={
-      display:"flex",
-      justifyContent:"center"
-    }
+  }
     const mainStyle={
       display:"flex",
       flexDirection:"column",
@@ -234,7 +168,7 @@ export default class Home extends React.PureComponent {
     }
     const navStyleMobile={
       display:"flex",
-      flexDirection:"column",
+      flexDirection:"row",
       justifyContent:"flex-end",
       height:"100px",
       alignItems:"center",
@@ -257,8 +191,7 @@ export default class Home extends React.PureComponent {
     const logoStyleMobile={
       marginTop:"10px",
       height:"80px",
-      width:"220px",
-      paddingLeft:"100px"
+      width:"auto"
     }
     const headStyle={
       display:"flex",
@@ -267,7 +200,7 @@ export default class Home extends React.PureComponent {
     }
     const headStyleMobile={
       display:"flex",
-      flexDirection:"column",
+      flexDirection:"row",
       justifyContent:"space-between"
     }
     const mottoStyle={
@@ -366,250 +299,159 @@ export default class Home extends React.PureComponent {
       <div>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
 
+        <Responsive minDeviceWidth={1024}>
+          <div style={container}>
 
+          <div style={divStyle}></div>
+          <div style={divStyle2}></div>
+          <div style={divStyle3}></div>
+          <div style={divStyle4}></div>
+          <div style={divStyle5}></div>
+          <div style={divStyle6}></div>
+          <div style={divStyle7}></div>
+          <div style={divStyle8}></div>
+          <div style={divStyle9}></div>
 
+          </div>
+        </Responsive>
+
+        <Responsive maxDeviceWidth={1023}>
+          <div style={containerMobile}>
+
+          <div style={divStyleMobile}></div>
+          <div style={divStyle2Mobile}></div>
+          <div style={divStyle3Mobile}></div>
+          <div style={divStyle4Mobile}></div>
+          <div style={divStyle5Mobile}></div>
+          <div style={divStyle6Mobile}></div>
+          <div style={divStyle7Mobile}></div>
+          <div style={divStyle8Mobile}></div>
+          <div style={divStyle9Mobile}></div>
+
+          </div>
+        </Responsive>
 
         <header>
-          <Responsive minDeviceWidth={1024}>
-          <div style={headStyle}>
-            <img style={logoStyle} src="http://h4z.it/Image/f02f70_llustration3.png"/>
-            <nav style={navStyle}>
+          <Responsive>
+            <div style={headStyle}>
+              <img style={logoStyle} src="http://h4z.it/Image/f02f70_llustration3.png"/>
+              <nav style={navStyle}>
 
-              <Link to="/" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
+                <Link to="/" style={{
+                  display:"flex",
+                  flexDirection:"row",
+                  paddingRight:"10px",
+                  textDecoration:"none",
+                  color:"#000000",
+                  fontSize:".75em",
+                  fontFamily:"Josefin Sans",
+                  fontStyle:"light",
+                  fontWeight:"300",
+                  textAlign:"right",
+                  textTransform:"uppercase",
+                  letterSpacing:"2px",
+                    textDecoration:'none'}}>
+                    Main
+                </Link>
+                <Link to="/Photography" style={{
+                  display:"flex",
+                  flexDirection:"row",
+                  paddingRight:"10px",
+                  textDecoration:"none",
+                  color:"#000000",
+                  fontSize:".75em",
+                  fontFamily:"Josefin Sans",
+                  fontStyle:"light",
+                  fontWeight:"300",
+                  textAlign:"right",
+                  textTransform:"uppercase",
+                  letterSpacing:"2px",
+                    textDecoration:'none'}}>
+                    Photography
+                </Link>
+                <Link to="/Design" style={{
+                  display:"flex",
+                  flexDirection:"row",
+                  paddingRight:"10px",
+                  textDecoration:"none",
+                  color:"#000000",
+                  fontSize:".75em",
+                  fontFamily:"Josefin Sans",
+                  fontStyle:"light",
+                  fontWeight:"300",
+                  textAlign:"right",
+                  textTransform:"uppercase",
+                  letterSpacing:"2px",
                   textDecoration:'none'}}>
-                  Main
-              </Link>
-              <Link to="/Photography" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
+                    Design
+                </Link>
+                <Link to="/Art" style={{
+                  display:"flex",
+                  flexDirection:"row",
+                  paddingRight:"10px",
+                  textDecoration:"none",
+                  color:"#000000",
+                  fontSize:".75em",
+                  fontFamily:"Josefin Sans",
+                  fontStyle:"light",
+                  fontWeight:"300",
+                  textAlign:"right",
+                  textTransform:"uppercase",
+                  letterSpacing:"2px",
                   textDecoration:'none'}}>
-                  Photography
-              </Link>
-              <Link to="/Design" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Design
-              </Link>
-              <Link to="/Art" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Art
-              </Link>
-              <Link to="/Development" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Development
-              </Link>
-              <Link to="/Contact" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Contact
-              </Link>
-              <Link to="/Blog" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Blog
-              </Link>
-              </nav>
-          </div>
-        </Responsive>
-          <Responsive maxDeviceWidth={1023}>
-          <div style={headStyleMobile}>
-            <img style={logoStyleMobile} src="http://h4z.it/Image/f02f70_llustration3.png"/>
-            <nav style={navStyleMobile}>
-
-              <Link to="/" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
+                    Art
+                </Link>
+                <Link to="/Development" style={{
+                  display:"flex",
+                  flexDirection:"row",
+                  paddingRight:"10px",
+                  textDecoration:"none",
+                  color:"#000000",
+                  fontSize:".75em",
+                  fontFamily:"Josefin Sans",
+                  fontStyle:"light",
+                  fontWeight:"300",
+                  textAlign:"right",
+                  textTransform:"uppercase",
+                  letterSpacing:"2px",
                   textDecoration:'none'}}>
-                  Main
-              </Link>
-              <Link to="/Photography" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
+                    Development
+                </Link>
+                <Link to="/Contact" style={{
+                  display:"flex",
+                  flexDirection:"row",
+                  paddingRight:"10px",
+                  textDecoration:"none",
+                  color:"#000000",
+                  fontSize:".75em",
+                  fontFamily:"Josefin Sans",
+                  fontStyle:"light",
+                  fontWeight:"300",
+                  textAlign:"right",
+                  textTransform:"uppercase",
+                  letterSpacing:"2px",
                   textDecoration:'none'}}>
-                  Photography
-              </Link>
-              <Link to="/Design" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Design
-              </Link>
-              <Link to="/Art" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Art
-              </Link>
-              <Link to="/Development" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Development
-              </Link>
-              <Link to="/Contact" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Contact
-              </Link>
-              <Link to="/Blog" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Blog
-              </Link>
-              </nav>
-          </div>
-        </Responsive>
+                    Contact
+                </Link>
+                <Link to="/Blog" style={{
+                  display:"flex",
+                  flexDirection:"row",
+                  paddingRight:"10px",
+                  textDecoration:"none",
+                  color:"#000000",
+                  fontSize:".75em",
+                  fontFamily:"Josefin Sans",
+                  fontStyle:"light",
+                  fontWeight:"300",
+                  textAlign:"right",
+                  textTransform:"uppercase",
+                  letterSpacing:"2px",
+                  textDecoration:'none'}}>
+                    Blog
+                </Link>
+                </nav>
+            </div>
+          </Responsive>
         </header>
         <main style={mainStyle}>
           <div style={divStyle}>

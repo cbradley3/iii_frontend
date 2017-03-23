@@ -234,7 +234,7 @@ export default class Home extends React.PureComponent {
     }
     const navStyleMobile={
       display:"flex",
-      flexDirection:"column",
+      flexDirection:"row",
       justifyContent:"flex-end",
       height:"100px",
       alignItems:"center",
@@ -257,8 +257,7 @@ export default class Home extends React.PureComponent {
     const logoStyleMobile={
       marginTop:"10px",
       height:"80px",
-      width:"220px",
-      paddingLeft:"100px"
+      width:"auto"
     }
     const headStyle={
       display:"flex",
@@ -267,7 +266,7 @@ export default class Home extends React.PureComponent {
     }
     const headStyleMobile={
       display:"flex",
-      flexDirection:"column",
+      flexDirection:"row",
       justifyContent:"space-between"
     }
     const mottoStyle={
