@@ -9,7 +9,120 @@ import Helmet from 'react-helmet';
 import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import FlatButton from "material-ui/FlatButton";
+import NavBar from 'components/NavBar';
+import FooterNav from 'components/FooterNav';
+import Gallery from 'react-photo-gallery';
 export default class Home extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state={
+      photos3:[
+        {
+          src:"http://h4z.it/Image/65f854_tal_Mood_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/dfb714_rfection_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/e2491c_neutral_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/78aca4_xpecting_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+      ],
+      photos2:[
+        {
+          src:"http://h4z.it/Image/d15078_rlena_Daniel.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/e61bab_ds_small_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/91871a_ne_PCard_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/6ae8ad__Daniel2_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+      ],
+      photos:[
+        {
+          src:"http://h4z.it/Image/858c82_sta_Jobs_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/ff51e4_rds_logo_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/94604c_eva_Rose_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+        {
+          src:"http://h4z.it/Image/aae876_Red_logo_400.jpg",
+          sizes:[
+            '(min-width: 480px) 25vw',
+            '(min-width: 1024px) 25vw',
+            '100vw'
+          ],
+        },
+      ],
+
+    }
+
+
+  }
   handleButton = () => {
     window.scroll(0,0);
   }
@@ -67,8 +180,7 @@ export default class Home extends React.PureComponent {
       background:"rgba(255, 255, 255, 1.00)",
       display:"flex",
       flexDirection:"row",
-      flexWrap:"wrap",
-      justifyContent:"space-around",
+      justifyContent:"center",
     }
     const divStyle4Mobile={
       width:"100%",
@@ -76,13 +188,12 @@ export default class Home extends React.PureComponent {
       background:"rgba(255, 255, 255, 1.00)",
       display:"flex",
       flexDirection:"row",
-      flexWrap:"wrap",
-      justifyContent:"space-around",
+      justifyContent:"center",
     }
     const divStyle5={
       width:"100%",
       height:"600px",
-      background:"url(http://h4z.it/Image/c7fe84_da443c74crev.jpg)",
+      background:"url(http://h4z.it/Image/4bd89e_da443c74crev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
       backgroundPosition:"center",
@@ -91,27 +202,37 @@ export default class Home extends React.PureComponent {
     const divStyle5Mobile={
       width:"100%",
       height:"600px",
-      background:"url(http://h4z.it/Image/c7fe84_da443c74crev.jpg)",
+      background:"url(http://h4z.it/Image/4bd89e_da443c74crev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
       backgroundPosition:"center",
       backgroundRepeat:"no-repeat",
+    }
+    const wrapper={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"center",
+    }
+    const wrapper2={
+      display:"flex",
+      flexDirection:"column",
+      alignItems:"center",
     }
     const divStyle6={
       width:"100%",
       height:"700px",
       background:"rgba(255, 255, 255, 1.00)",
       display:"flex",
-      flexWrap:"wrap",
-      justifyContent:"space-around",
+      flexDirection:"row",
+      justifyContent:"center"
     }
     const divStyle6Mobile={
       width:"100%",
       height:"700px",
       background:"rgba(255, 255, 255, 1.00)",
       display:"flex",
-      flexWrap:"wrap",
-      justifyContent:"space-around",
+      flexDirection:"row",
+      justifyContent:"center",
     }
     const divStyle7={
       width:"100%",
@@ -215,23 +336,6 @@ export default class Home extends React.PureComponent {
       textAlign:"center",
       marginTop:"30px"
     }
-    const navStyle={
-      display:"flex",
-      flexDirection:"row",
-      justifyContent:"flex-end",
-      height:"100px",
-      alignItems:"center",
-      paddingRight:"10px",
-      textDecoration:"none",
-      color:"#000000",
-      fontSize:".90em",
-      fontFamily:"Josefin Sans",
-      fontStyle:"light",
-      fontWeight:"300",
-      textAlign:"right",
-      textTransform:"uppercase",
-      letterSpacing:"2px",
-    }
     const navStyleMobile={
       display:"flex",
       flexDirection:"column",
@@ -248,22 +352,14 @@ export default class Home extends React.PureComponent {
       textAlign:"right",
       textTransform:"uppercase",
       letterSpacing:"2px",
-    }
-    const logoStyle={
-      marginTop:"10px",
-      height:"80px",
-      width:"auto"
+
     }
     const logoStyleMobile={
       marginTop:"10px",
       height:"80px",
       width:"220px",
       paddingLeft:"100px"
-    }
-    const headStyle={
-      display:"flex",
-      flexDirection:"row",
-      justifyContent:"space-between"
+
     }
     const headStyleMobile={
       display:"flex",
@@ -290,24 +386,7 @@ export default class Home extends React.PureComponent {
         marginTop:"30px",
         letterSpacing:"2px"
     }
-    const footerStyle={
-      display:"flex",
-      flexDirection:"row",
-      justifyContent:"space-around",
-      backgroundColor:"rgba(0, 0, 0, 0.10)",
-      height:"100px",
-      alignItems:"center",
-      paddingRight:"10px",
-      textDecoration:"none",
-      color:"#000000",
-      fontSize:"1.10em",
-      fontFamily:"Josefin Sans",
-      fontStyle:"light",
-      fontWeight:"300",
-      textAlign:"right",
-      textTransform:"uppercase",
-      letterSpacing:"2px",
-    }
+
     const footerStyleMobile={
       display:"flex",
       flexDirection:"row",
@@ -366,152 +445,17 @@ export default class Home extends React.PureComponent {
       <div>
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
 
-
-
-
         <header>
           <Responsive minDeviceWidth={1024}>
-          <div style={headStyle}>
-            <img style={logoStyle} src="http://h4z.it/Image/f02f70_llustration3.png"/>
-            <nav style={navStyle}>
+            <NavBar/>
+          </Responsive>
 
-              <Link to="/" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                  textDecoration:'none'}}>
-                  Main
-              </Link>
-              <Link to="/Photography" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                  textDecoration:'none'}}>
-                  Photography
-              </Link>
-              <Link to="/Design" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Design
-              </Link>
-              <Link to="/Art" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Art
-              </Link>
-              <Link to="/Development" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Development
-              </Link>
-              <Link to="/Contact" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Contact
-              </Link>
-              <Link to="/Blog" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
-                  Blog
-              </Link>
-              </nav>
-          </div>
-        </Responsive>
           <Responsive maxDeviceWidth={1023}>
           <div style={headStyleMobile}>
             <img style={logoStyleMobile} src="http://h4z.it/Image/f02f70_llustration3.png"/>
             <nav style={navStyleMobile}>
 
               <Link to="/" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                  textDecoration:'none'}}>
-                  Main
-              </Link>
-              <Link to="/Photography" style={{
                 display:"flex",
                 flexDirection:"row",
                 paddingRight:"10px",
@@ -633,25 +577,17 @@ export default class Home extends React.PureComponent {
             <div style={titleStyle}> design </div>
           </div>
 
-          <div style={divStyle4}>
-            <img style={imageStyle2} src="http://h4z.it/Image/683e01_va_Rose_logo.jpg"/>
-            <img style={imageStyle2} src="http://h4z.it/Image/fc0c42_uby_Red_logo.png"/>
-            <img style={imageStyle2} src="http://h4z.it/Image/02bf48__awards_logo.jpg"/>
-            <img style={imageStyle3} src="http://h4z.it/Image/4e5f82_Daniel_small.jpg"/>
-            <img style={imageStyle3} src="http://h4z.it/Image/3036b4_awards_small.jpg"/>
-            <img style={imageStyle3} src="http://h4z.it/Image/1bc408_ue_Max_small.jpg"/>
+          <div style={wrapper2}>
+          <Gallery style={divStyle4} photos={this.state.photos} cols={4}/>
+          <Gallery style={divStyle4} photos={this.state.photos2} cols={4}/>
           </div>
 
           <div style={divStyle5}>
             <div style={titleStyle}> art </div>
           </div>
-
-          <div style={divStyle6}>
-            <img style={imageStyle} src="http://h4z.it/Thumb/cd1a22_55978b6f8rev.jpg"/>
-            <img style={imageStyle} src="http://h4z.it/Image/f3a635_af8af957crev.jpg"/>
-            <img style={imageStyle} src="http://h4z.it/Image/97e5d0_bb2729ac4rev.jpg"/>
+          <div style={wrapper}>
+          <Gallery style={divStyle6} photos={this.state.photos3} cols={4}/>
           </div>
-
           <div style={divStyle7}>
             <div style={titleStyle}> Development </div>
           </div>
@@ -674,108 +610,7 @@ export default class Home extends React.PureComponent {
         </main>
         <footer>
 
-
-          <div>
-           <nav style={footerStyle}>
-
-            <Link to="/Contact" style={{
-              display:"flex",
-              flexDirection:"row",
-              paddingRight:"10px",
-              textDecoration:"none",
-              color:"#000000",
-              fontSize:".75em",
-              fontFamily:"Josefin Sans",
-              fontStyle:"light",
-              fontWeight:"300",
-              textAlign:"right",
-              textTransform:"uppercase",
-              letterSpacing:"2px",
-                textDecoration:'none'}}>
-                contact
-            </Link>
-            <Link to="/Photography" style={{
-              display:"flex",
-              flexDirection:"row",
-              paddingRight:"10px",
-              textDecoration:"none",
-              color:"#000000",
-              fontSize:".75em",
-              fontFamily:"Josefin Sans",
-              fontStyle:"light",
-              fontWeight:"300",
-              textAlign:"right",
-              textTransform:"uppercase",
-              letterSpacing:"2px",
-                textDecoration:'none'}}>
-                Photography
-            </Link>
-            <Link to="/Design" style={{
-              display:"flex",
-              flexDirection:"row",
-              paddingRight:"10px",
-              textDecoration:"none",
-              color:"#000000",
-              fontSize:".75em",
-              fontFamily:"Josefin Sans",
-              fontStyle:"light",
-              fontWeight:"300",
-              textAlign:"right",
-              textTransform:"uppercase",
-              letterSpacing:"2px",
-              textDecoration:'none'}}>
-                Design
-            </Link>
-            <Link to="/Art" style={{
-              display:"flex",
-              flexDirection:"row",
-              paddingRight:"10px",
-              textDecoration:"none",
-              color:"#000000",
-              fontSize:".75em",
-              fontFamily:"Josefin Sans",
-              fontStyle:"light",
-              fontWeight:"300",
-              textAlign:"right",
-              textTransform:"uppercase",
-              letterSpacing:"2px",
-              textDecoration:'none'}}>
-                Art
-            </Link>
-            <Link to="/Development" style={{
-              display:"flex",
-              flexDirection:"row",
-              paddingRight:"10px",
-              textDecoration:"none",
-              color:"#000000",
-              fontSize:".75em",
-              fontFamily:"Josefin Sans",
-              fontStyle:"light",
-              fontWeight:"300",
-              textAlign:"right",
-              textTransform:"uppercase",
-              letterSpacing:"2px",
-              textDecoration:'none'}}>
-                Development
-            </Link>
-            <Link to="/Blog" style={{
-              display:"flex",
-              flexDirection:"row",
-              paddingRight:"10px",
-              textDecoration:"none",
-              color:"#000000",
-              fontSize:".75em",
-              fontFamily:"Josefin Sans",
-              fontStyle:"light",
-              fontWeight:"300",
-              textAlign:"right",
-              textTransform:"uppercase",
-              letterSpacing:"2px",
-              textDecoration:'none'}}>
-                Blog
-            </Link>
-            </nav>
-        </div>
+          <FooterNav/>
 
         </footer>
 
