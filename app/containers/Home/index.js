@@ -20,7 +20,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/65f854_tal_Mood_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -28,7 +28,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/dfb714_rfection_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -36,7 +36,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/e2491c_neutral_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -44,7 +44,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/78aca4_xpecting_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -54,7 +54,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/d15078_rlena_Daniel.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -62,7 +62,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/e61bab_ds_small_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -70,7 +70,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/91871a_ne_PCard_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -78,7 +78,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/6ae8ad__Daniel2_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -88,7 +88,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/858c82_sta_Jobs_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -96,7 +96,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/ff51e4_rds_logo_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -104,7 +104,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/94604c_eva_Rose_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -112,7 +112,7 @@ export default class Home extends React.PureComponent {
         {
           src:"http://h4z.it/Image/aae876_Red_logo_400.jpg",
           sizes:[
-            '(min-width: 480px) 25vw',
+            '(min-width: 320px) 25vw',
             '(min-width: 1024px) 25vw',
             '100vw'
           ],
@@ -259,7 +259,7 @@ export default class Home extends React.PureComponent {
     }
     const divStyle8Mobile={
       width:"100%",
-      height:"225px",
+      height:"auto",
       background:"rgba(0, 0, 0, 0.03)"
     }
     const divStyle9={
@@ -267,6 +267,7 @@ export default class Home extends React.PureComponent {
       justifyContent:"center"
     }
     const divStyle9Mobile={
+      marginTop:"70px",
       display:"flex",
       justifyContent:"center"
     }
@@ -292,7 +293,7 @@ export default class Home extends React.PureComponent {
     }
     const titleStyleMobile={
       color:"#eeeeee",
-      fontSize:"6em",
+      fontSize:"2em",
       fontFamily:"Quicksand",
       fontWeight:"300",
       textTransform:"uppercase",
@@ -330,7 +331,7 @@ export default class Home extends React.PureComponent {
     }
     const bodyStyleMobile={
       color:"#191919",
-      fontSize:".95em",
+      fontSize:".75em",
       fontFamily:"Open Sans",
       fontWeight:"400",
       textAlign:"center",
@@ -342,10 +343,9 @@ export default class Home extends React.PureComponent {
       justifyContent:"flex-end",
       height:"100px",
       alignItems:"center",
-      paddingRight:"10px",
       textDecoration:"none",
       color:"#000000",
-      fontSize:".90em",
+      fontSize:"1em",
       fontFamily:"Josefin Sans",
       fontStyle:"light",
       fontWeight:"300",
@@ -354,17 +354,35 @@ export default class Home extends React.PureComponent {
       letterSpacing:"2px",
 
     }
+    const linkStyle={
+      display:"flex",
+      flexDirection:"column",
+      textDecoration:"none",
+      color:"#000000",
+      fontSize:".75em",
+      fontFamily:"Josefin Sans",
+      fontStyle:"light",
+      fontWeight:"400",
+      textAlign:"center",
+      textTransform:"uppercase",
+      letterSpacing:"2px",
+    }
+
     const logoStyleMobile={
-      marginTop:"10px",
-      height:"80px",
-      width:"220px",
-      paddingLeft:"100px"
+      marginTop:"15px",
+      height:"auto",
+      width:"50%",
+      display:"flex",
+      alignSelf:"center",
+      flexDirection:"column",
+      justifyContent:"flex-start",
 
     }
     const headStyleMobile={
       display:"flex",
+      marginTop:"20px",
       flexDirection:"column",
-      justifyContent:"space-between"
+      alignItems:"center",
     }
     const mottoStyle={
       color:"#191919",
@@ -386,22 +404,16 @@ export default class Home extends React.PureComponent {
         marginTop:"30px",
         letterSpacing:"2px"
     }
-
     const footerStyleMobile={
       display:"flex",
-      flexDirection:"row",
-      justifyContent:"space-around",
-      backgroundColor:"rgba(0, 0, 0, 0.10)",
-      height:"100px",
-      alignItems:"center",
-      paddingRight:"10px",
+      flexDirection:"column",
       textDecoration:"none",
       color:"#000000",
-      fontSize:"1.10em",
+      fontSize:"1em",
       fontFamily:"Josefin Sans",
       fontStyle:"light",
-      fontWeight:"300",
-      textAlign:"right",
+      fontWeight:"500",
+      textAlign:"center",
       textTransform:"uppercase",
       letterSpacing:"2px",
     }
@@ -455,110 +467,43 @@ export default class Home extends React.PureComponent {
             <img style={logoStyleMobile} src="http://h4z.it/Image/f02f70_llustration3.png"/>
             <nav style={navStyleMobile}>
 
-              <Link to="/" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                  textDecoration:'none'}}>
+              <Link to="/" style={linkStyle}>
                   Photography
               </Link>
-              <Link to="/Design" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
+              <Link to="/Design" style={linkStyle}>
                   Design
               </Link>
-              <Link to="/Art" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
+              <Link to="/Art" style={linkStyle}>
                   Art
               </Link>
-              <Link to="/Development" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
+              <Link to="/Development" style={linkStyle}>
                   Development
               </Link>
-              <Link to="/Contact" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
+              <Link to="/Contact" style={linkStyle}>
                   Contact
               </Link>
-              <Link to="/Blog" style={{
-                display:"flex",
-                flexDirection:"row",
-                paddingRight:"10px",
-                textDecoration:"none",
-                color:"#000000",
-                fontSize:".75em",
-                fontFamily:"Josefin Sans",
-                fontStyle:"light",
-                fontWeight:"300",
-                textAlign:"right",
-                textTransform:"uppercase",
-                letterSpacing:"2px",
-                textDecoration:'none'}}>
+              <Link to="/Blog" style={linkStyle}>
                   Blog
               </Link>
               </nav>
           </div>
         </Responsive>
-        </header>
+      </header>
+
         <main style={mainStyle}>
-          <div style={divStyle}>
-            <div style={titleStyle}> Photography </div>
-          </div>
+
+          <Responsive minDeviceWidth={1024}>
+            <div style={divStyle}>
+              <div style={titleStyle}> Photography </div>
+            </div>
+          </Responsive>
+
+          <Responsive maxDeviceWidth={1023}>
+            <div style={divStyleMobile}>
+              <div style={titleStyleMobile}> Photography </div>
+            </div>
+          </Responsive>
+
           <div style={divStyle2}>
 
                   <h1 style={headerStyle}>
@@ -573,44 +518,122 @@ export default class Home extends React.PureComponent {
             </div>
           </div>
 
-          <div style={divStyle3}>
-            <div style={titleStyle}> design </div>
-          </div>
+          <Responsive minDeviceWidth={1024}>
+            <div style={divStyle3}>
+              <div style={titleStyle}> Design </div>
+            </div>
+          </Responsive>
+
+          <Responsive maxDeviceWidth={1023}>
+            <div style={divStyle3Mobile}>
+              <div style={titleStyleMobile}> Design </div>
+            </div>
+          </Responsive>
 
           <div style={wrapper2}>
           <Gallery style={divStyle4} photos={this.state.photos} cols={4}/>
           <Gallery style={divStyle4} photos={this.state.photos2} cols={4}/>
           </div>
 
-          <div style={divStyle5}>
-            <div style={titleStyle}> art </div>
-          </div>
+          <Responsive minDeviceWidth={1024}>
+            <div style={divStyle5}>
+              <div style={titleStyle}> art </div>
+            </div>
+          </Responsive>
+
+          <Responsive maxDeviceWidth={1023}>
+            <div style={divStyle5Mobile}>
+              <div style={titleStyleMobile}> art </div>
+            </div>
+          </Responsive>
+
           <div style={wrapper}>
           <Gallery style={divStyle6} photos={this.state.photos3} cols={4}/>
           </div>
-          <div style={divStyle7}>
-            <div style={titleStyle}> Development </div>
-          </div>
 
-          <div style={divStyle8}>
-            <div style={bodyStyle}>
-              <p style={bodyStyle}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
-              <p style={bodyStyle}> HTML | Cascading Style Sheets (CSS) | Javascript | </p>
-              <p style={bodyStyle}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
+          <Responsive minDeviceWidth={1024}>
+            <div style={divStyle7}>
+              <div style={titleStyle}> Development </div>
             </div>
-              <div style={mottoStyle}>
-              <p style={mottoStyle}> Design good. </p>
+          </Responsive>
+
+          <Responsive maxDeviceWidth={1023}>
+            <div style={divStyle7Mobile}>
+              <div style={titleStyleMobile}> Development </div>
+            </div>
+          </Responsive>
+
+          <Responsive minDeviceWidth={1024}>
+          <div style={divStyle8}>
+              <div style={bodyStyle}>
+                <p style={bodyStyle}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
+                <p style={bodyStyle}> HTML | Cascading Style Sheets (CSS) | Javascript </p>
+                <p style={bodyStyle}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
               </div>
+                <div style={mottoStyle}>
+                <p style={mottoStyle}> Design good. </p>
+                </div>
           </div>
+          </Responsive>
 
-          <div style={divStyle9}>
+          <Responsive maxDeviceWidth={1023}>
+          <div style={divStyle8Mobile}>
+              <div style={bodyStyle}>
+                <p style={bodyStyle}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
+                <p style={bodyStyle}> HTML | Cascading Style Sheets (CSS) | Javascript </p>
+                <p style={bodyStyle}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
+              </div>
+                <div style={mottoStyle}>
+                <p style={mottoStyle}> Design good. </p>
+                </div>
+          </div>
+          </Responsive>
+
+          <Responsive minDeviceWidth={1024}>
+            <div style={divStyle9}>
             <FlatButton label="Go to Top" onTouchTap={this.handleButton}/>
+            </div>
+          </Responsive>
 
-          </div>
+          <Responsive maxDeviceWidth={1023}>
+            <div style={divStyle9Mobile}>
+            <FlatButton label="Go to Top" onTouchTap={this.handleButton}/>
+            </div>
+          </Responsive>
+
         </main>
         <footer>
 
-          <FooterNav/>
+            <Responsive minDeviceWidth={1024}>
+              <FooterNav/>
+            </Responsive>
+
+            <Responsive maxDeviceWidth={1023}>
+            <div style={headStyleMobile}>
+
+              <nav style={footerStyleMobile}>
+
+                <Link to="/" style={linkStyle}>
+                    Photography
+                </Link>
+                <Link to="/Design" style={linkStyle}>
+                    Design
+                </Link>
+                <Link to="/Art" style={linkStyle}>
+                    Art
+                </Link>
+                <Link to="/Development" style={linkStyle}>
+                    Development
+                </Link>
+                <Link to="/Contact" style={linkStyle}>
+                    Contact
+                </Link>
+                <Link to="/Blog" style={linkStyle}>
+                    Blog
+                </Link>
+                </nav>
+            </div>
+          </Responsive>
 
         </footer>
 
