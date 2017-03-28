@@ -11,9 +11,12 @@ import {Link} from "react-router";
 import FlatButton from "material-ui/FlatButton";
 import NavBar from 'components/NavBar';
 import FooterNav from 'components/FooterNav';
+import { Parallax } from 'react-parallax';
 
 export default class Contact extends React.PureComponent {
   render() {
+
+    
     return (
       <div>
         <Helmet title="Contact" meta={[ { name: 'description', content: 'Description of Contact' }]}/>
