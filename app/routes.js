@@ -24,14 +24,23 @@ export default function createRoutes() {
     },
      },
      {
-        path: '/About',
-        name: 'About',
+        path: '/Contact',
+        name: 'Contact',
         getComponent(nextState, cb) {
-          import('containers/About')
+          import('containers/Contact')
             .then(loadModule(cb))
             .catch(errorLoading);
      },
       },
+      {
+         path: '/Blog',
+         name: 'Blog',
+         getComponent(nextState, cb) {
+           import('containers/Blog')
+             .then(loadModule(cb))
+             .catch(errorLoading);
+      },
+       },
      {
       path: '*',
       name: 'notfound',

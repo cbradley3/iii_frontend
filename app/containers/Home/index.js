@@ -126,6 +126,9 @@ export default class Home extends React.PureComponent {
   handleButton = () => {
     window.scroll(0,0);
   }
+  handleScroll = (num) => {
+    window.scroll(0,num);
+  }
 
   render() {
     const divStyle={
@@ -139,7 +142,7 @@ export default class Home extends React.PureComponent {
     }
     const divStyleMobile={
       width:"100%",
-      height:"600px",
+      height:"500px",
       background:"url(http://h4z.it/Image/c98c04_DSC_0785rev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
@@ -167,7 +170,7 @@ export default class Home extends React.PureComponent {
     }
     const divStyle3Mobile={
       width:"100%",
-      height:"600px",
+      height:"500px",
       background:"url(http://h4z.it/Image/35e950_DSC_0266rev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
@@ -201,7 +204,7 @@ export default class Home extends React.PureComponent {
     }
     const divStyle5Mobile={
       width:"100%",
-      height:"600px",
+      height:"450px",
       background:"url(http://h4z.it/Image/4bd89e_da443c74crev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
@@ -212,6 +215,7 @@ export default class Home extends React.PureComponent {
       display:"flex",
       flexDirection:"row",
       justifyContent:"center",
+
     }
     const wrapper2={
       display:"flex",
@@ -245,7 +249,7 @@ export default class Home extends React.PureComponent {
     }
     const divStyle7Mobile={
       width:"100%",
-      height:"600px",
+      height:"450px",
       background:"url(http://h4z.it/Image/645fa8_IMG_9509rev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
@@ -267,7 +271,7 @@ export default class Home extends React.PureComponent {
       justifyContent:"center"
     }
     const divStyle9Mobile={
-      marginTop:"70px",
+      marginTop:"60 px",
       display:"flex",
       justifyContent:"center"
     }
@@ -295,11 +299,11 @@ export default class Home extends React.PureComponent {
       color:"#eeeeee",
       fontSize:"2em",
       fontFamily:"Quicksand",
-      fontWeight:"300",
+      fontWeight:"400",
       textTransform:"uppercase",
       letterSpacing:"6px",
       textAlign:"center",
-      marginTop:"250px"
+      marginTop:"225px"
     }
     const headerStyle={
       color:"#191919",
@@ -313,7 +317,7 @@ export default class Home extends React.PureComponent {
     }
     const headerStyleMobile={
       color:"#191919",
-      fontSize:"1.5em",
+      fontSize:"1em",
       fontFamily:"Open Sans",
       fontWeight:"800",
       textAlign:"center",
@@ -331,7 +335,7 @@ export default class Home extends React.PureComponent {
     }
     const bodyStyleMobile={
       color:"#191919",
-      fontSize:".75em",
+      fontSize:".80em",
       fontFamily:"Open Sans",
       fontWeight:"400",
       textAlign:"center",
@@ -396,7 +400,7 @@ export default class Home extends React.PureComponent {
     }
     const mottoStyleMobile={
         color:"#191919",
-        fontSize:"1.10em",
+        fontSize:".90em",
         fontFamily:"Open Sans",
         fontWeight:"700",
         textAlign:"center",
@@ -470,20 +474,20 @@ export default class Home extends React.PureComponent {
               <Link to="/" style={linkStyle}>
                   Photography
               </Link>
-              <Link to="/Design" style={linkStyle}>
+              <Link onTouchTap={()=>this.handleScroll(1000)} style={linkStyle}>
                   Design
               </Link>
-              <Link to="/Art" style={linkStyle}>
+              <Link onTouchTap={()=>this.handleScroll(2100)} style={linkStyle}>
                   Art
               </Link>
-              <Link to="/Development" style={linkStyle}>
+              <Link onTouchTap={()=>this.handleScroll(3250)} style style={linkStyle}>
                   Development
-              </Link>
-              <Link to="/Contact" style={linkStyle}>
-                  Contact
               </Link>
               <Link to="/Blog" style={linkStyle}>
                   Blog
+              </Link>
+              <Link to="/Contact" style={linkStyle}>
+                  Contact
               </Link>
               </nav>
           </div>
@@ -504,19 +508,36 @@ export default class Home extends React.PureComponent {
             </div>
           </Responsive>
 
+        <Responsive minDeviceWidth={1024}>
           <div style={divStyle2}>
-
                   <h1 style={headerStyle}>
                     Designer | Artist | Photographer | Developer
                   </h1>
               <div style={bodyStyle}>
                 <p style={bodyStyle}> I am an Augutsa based designer with over 18 years of professional experience in the creative industry. </p>
                 <p style={bodyStyle}> I focus on creating solutions for my clients. </p>
-            </div>
-            <div style={mottoStyle}>
-              <p style={mottoStyle}> Design good. </p>
-            </div>
+              </div>
+              <div style={mottoStyle}>
+                <p style={mottoStyle}> Design good. </p>
+              </div>
           </div>
+        </Responsive>
+
+        <Responsive maxDeviceWidth={1023}>
+          <div style={divStyle2Mobile}>
+                  <h1 style={headerStyleMobile}>
+                    Designer | Artist | Photographer | Developer
+                  </h1>
+              <div style={bodyStyleMobile}>
+                <p style={bodyStyleMobile}> I am an Augutsa based designer with over 18 years of professional experience in the creative industry. </p>
+                <p style={bodyStyleMobile}> I focus on creating solutions for my clients. </p>
+              </div>
+              <div style={mottoStyleMobile}>
+                <p style={mottoStyleMobile}> Design good. </p>
+              </div>
+          </div>
+        </Responsive>
+
 
           <Responsive minDeviceWidth={1024}>
             <div style={divStyle3}>
@@ -578,13 +599,13 @@ export default class Home extends React.PureComponent {
 
           <Responsive maxDeviceWidth={1023}>
           <div style={divStyle8Mobile}>
-              <div style={bodyStyle}>
-                <p style={bodyStyle}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
-                <p style={bodyStyle}> HTML | Cascading Style Sheets (CSS) | Javascript </p>
-                <p style={bodyStyle}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
+              <div style={bodyStyleMobile}>
+                <p style={bodyStyleMobile}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
+                <p style={bodyStyleMobile}> HTML | Cascading Style Sheets (CSS) | Javascript </p>
+                <p style={bodyStyleMobile}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
               </div>
-                <div style={mottoStyle}>
-                <p style={mottoStyle}> Design good. </p>
+                <div style={mottoStyleMobile}>
+                <p style={mottoStyleMobile}> Design good. </p>
                 </div>
           </div>
           </Responsive>
@@ -616,20 +637,20 @@ export default class Home extends React.PureComponent {
                 <Link to="/" style={linkStyle}>
                     Photography
                 </Link>
-                <Link to="/Design" style={linkStyle}>
+                <Link onTouchTap={()=>this.handleScroll(1000)} style={linkStyle}>
                     Design
                 </Link>
-                <Link to="/Art" style={linkStyle}>
+                <Link onTouchTap={()=>this.handleScroll(2100)} style={linkStyle}>
                     Art
                 </Link>
-                <Link to="/Development" style={linkStyle}>
+                <Link onTouchTap={()=>this.handleScroll(3250)} style style={linkStyle}>
                     Development
-                </Link>
-                <Link to="/Contact" style={linkStyle}>
-                    Contact
                 </Link>
                 <Link to="/Blog" style={linkStyle}>
                     Blog
+                </Link>
+                <Link to="/Contact" style={linkStyle}>
+                    Contact
                 </Link>
                 </nav>
             </div>
