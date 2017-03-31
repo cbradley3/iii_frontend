@@ -9,12 +9,85 @@ import Helmet from 'react-helmet';
 import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import FlatButton from "material-ui/FlatButton";
-import NavBar from 'components/NavBar';
-import FooterNav from 'components/FooterNav';
+import NavBar from 'components/NavBar2';
+import FooterNav2 from 'components/FooterNav2';
 import Parallax from 'react-simple-parallax';
 
 export default class Contact extends React.PureComponent {
 
+  constructor(props){
+    super(props);
+    this.state={
+      name:"",
+      email:"",
+      phoneNumber:"",
+      yourWebsite:"",
+      yourMessage:"",
+    }
+  }
+  handleName = (event) => {
+    this.setState({
+      name: event.target.value
+    })
+  }
+  handleEmail = (event) => {
+    this.setState({
+      email:event.target.value
+    })
+  }
+  handlePhoneNumer = (event) => {
+    this.setState({
+      phoneNumber: event.target.value
+    })
+  }
+  handleYourWebsite = (event) => {
+    this.setState({
+      yourWebsite:event.target.value
+    })
+  }
+handleYourMessage = (event) => {
+  this.setState({
+    yourMessage: event.target.value
+  })
+}
+
+  handleImage = (event) => {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        image: file,
+        preview: reader.result
+      })
+    }
+    reader.readAsDataURL(file);
+  }
+    storeArticle = () => {
+
+      var data = new FormData ();
+      data.append("name", this.state.name);
+      data.append("email", this.state.email);
+      data.append("phoneNumber", this.state.phoneNumber);
+      data.append("yourWebsite", this.state.yourWebsite);
+      data.append("yourMessage", this.state.yourMessage);
+
+    fetch("http://localhost:8000/api/storeArticle",{
+      method:"post",
+      body:data
+    })
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(json){
+      if(json.success){
+        alert("Success");
+      }
+      else if (json.error){
+        aler("Error");
+      }
+    })
+  }
   render() {
     const divStyle={
       textAlign:"center",
@@ -122,8 +195,14 @@ export default class Contact extends React.PureComponent {
     }
     const divStyle4={
       width:"100%",
-      height:"1300px",
       background:"rgba(0, 0, 0, 1.00)"
+    }
+    const divStyle5={
+      width:"100%",
+      height:"300px",
+      marginTop:"-20px",
+      background:"rgba(0, 0, 0, 1.00)",
+      color:"#ffffff"
     }
     const contactLeft={
       width:"30%",
@@ -155,7 +234,63 @@ export default class Contact extends React.PureComponent {
       textTransform:"uppercase",
 
     }
+    const mainStyle={
 
+    }
+    const mainStyleMobile={
+
+    }
+    const footerStyleMobile={
+      display:"flex",
+      flexDirection:"column",
+      textDecoration:"none",
+      color:"#000000",
+      fontSize:"1em",
+      fontFamily:"Josefin Sans",
+      fontStyle:"light",
+      fontWeight:"500",
+      textAlign:"center",
+      textTransform:"uppercase",
+      letterSpacing:"2px",
+    }
+    const headStyleMobile={
+      display:"flex",
+      marginTop:"20px",
+      flexDirection:"column",
+      alignItems:"center",
+    }
+    const linkStyle={
+      display:"flex",
+      flexDirection:"column",
+      textDecoration:"none",
+      color:"#000000",
+      fontSize:".75em",
+      fontFamily:"Josefin Sans",
+      fontStyle:"light",
+      fontWeight:"400",
+      textAlign:"center",
+      textTransform:"uppercase",
+      letterSpacing:"2px",
+    }
+    const mottoStyle={
+      color:"ffffff",
+      fontSize:"1.20em",
+      fontFamily:"Open Sans",
+      fontWeight:"700",
+      textAlign:"center",
+      textTransform:"uppercase",
+      letterSpacing:"2px"
+    }
+    const mottoStyleMobile={
+        color:"#ffffff",
+        fontSize:".90em",
+        fontFamily:"Open Sans",
+        fontWeight:"700",
+        textAlign:"center",
+        textTransform:"uppercase",
+        marginTop:"30px",
+        letterSpacing:"2px"
+      }
     return (
       <div>
         <Helmet title="Contact" meta={[ { name: 'description', content: 'Description of Contact' }]}/>
@@ -165,6 +300,9 @@ export default class Contact extends React.PureComponent {
               <NavBar/>
             </Responsive>
           </header>
+
+          <main style={mainStyle}>
+
 
           <div>
               <div style={divStyle}>
@@ -191,34 +329,73 @@ export default class Contact extends React.PureComponent {
                   <p style={bodyStyle}> <h1 style={headerStyle}>
                   Twitter: </h1>  @the_III_ </p>
 
-                <input type="submit" placeholder="Send Message" style={inputBox3}/>
+                <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
               </div>
 
               <div style={contactRight}>
                 <div style={contactRow}>
-                  <label style={bodyStyle}>Name <input type="text" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBox}/> </label>
 
-                  <label style={bodyStyle}>Email <input type="email" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBox}/> </label>
                   </div>
                 <div style={contactRow}>
-                  <label style={bodyStyle}>Phone Number <input type="number" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Phone Number <input onChange = {this.handlePhoneNumber} type="number" style={inputBox}/> </label>
 
-                  <label style={bodyStyle}>Your Website <input type="url" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Your Website <input onChange = {this.handleYourWebsite} type="url" style={inputBox}/> </label>
                   </div>
                 <div style={contactRow}>
-                  <label style={bodyStyle}>Your Message <textarea type="text" style={inputBox2}></textarea> </label>
+                  <label style={bodyStyle}>Your Message <textarea onChange = {this.handleYourMessage} type="text" style={inputBox2}></textarea> </label>
                 </div>
 
 
 
 
             </div>
-          </div>
-          
-
-
 
           </div>
+
+        </div>
+
+        <Responsive minDeviceWidth={1024}>
+          <div style={divStyle5}>
+          <p style={mottoStyle}> Design good. </p>
+          </div>
+        </Responsive>
+
+        <Responsive maxDeviceWidth={1023}>
+        <div>
+          <p style={mottoStyleMobile}> Design good. </p>
+        </div>
+        </Responsive>
+
+        </main>
+
+        <footer>
+
+            <Responsive minDeviceWidth={1024}>
+              <FooterNav2/>
+            </Responsive>
+
+            <Responsive maxDeviceWidth={1023}>
+            <div style={headStyleMobile}>
+
+              <nav style={footerStyleMobile}>
+
+                <Link to="/" style={linkStyle}>
+                    Main
+                </Link>
+                <Link to="/Blog" style={linkStyle}>
+                    Blog
+                </Link>
+                <Link to="/Contact" style={linkStyle}>
+                    Contact
+                </Link>
+                </nav>
+            </div>
+          </Responsive>
+
+        </footer>
+
 
       </div>
 

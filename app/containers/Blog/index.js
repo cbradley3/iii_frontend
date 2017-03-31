@@ -70,11 +70,15 @@ export default class Blog extends React.PureComponent {
                     <div>
 
                       <div style={divStyle}>
-            				        <Parallax style={box} className="parallax" speedDivider="2" backgroundStyle={reactSimpleParallaxBg}>
+            				        <Parallax style={box} className="parallax" speedDivider="3" backgroundStyle={reactSimpleParallaxBg}>
             		  		        Blog
             		  	        </Parallax>
                      </div>
-
+                     <div style={divStyle}>
+                          <Parallax style={box} className="parallax" speedDivider="5" backgroundStyle={reactSimpleParallaxBg}>
+                            Blog
+                          </Parallax>
+                    </div>
 
 
                     </div>
