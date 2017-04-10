@@ -13,7 +13,62 @@
  import FooterNav2 from 'components/FooterNav2';
  import Parallax from 'react-simple-parallax';
 
- export default class Contact extends React.PureComponent {
+ export default class Blog extends React.PureComponent {
+   constructor(props){
+   super(props);
+   this.state={
+     title:"",
+     body:"",
+     image:"",
+     preview:"",
+   }
+ }
+ handleTitle = (event) => {
+   this.setState({
+     title: event.target.value
+   })
+ }
+ handleBody = (event) => {
+   this.setState({
+     body:event.target.value
+   })
+ }
+ handleImage = (event) => {
+   event.preventDefault();
+   let reader = new FileReader();
+   let file = event.target.files[0];
+   reader.onloadend = () => {
+     this.setState({
+       image: file,
+       preview: reader.result
+     })
+   }
+   reader.readAsDataURL(file);
+ }
+
+  storeArticle = () => {
+
+    var data = new FormData ();
+    data.append("title", this.state.title);
+    data.append("body", this.state.body);
+    data.append("image", this.state.image);
+
+  fetch("http://localhost:8000/api/storeArticle",{
+    method:"post",
+    body:data
+  })
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(json){
+    if(json.success){
+      alert("Success");
+    }
+    else if (json.error){
+      aler("Error");
+    }
+  })
+}
    render() {
      const divStyle={
        textAlign:"center",
@@ -29,7 +84,7 @@
        marginTop:"100px"
      }
      const reactSimpleParallaxBg={
-         background:"url(http://h4z.it/Image/bc686e_MG_9509bwrev.jpg)",
+         background:"url(http://h4z.it/Image/ae8f02_MG_9509bwrev.jpg)",
          width:"100%",
          height:"620px",
          backgroundSize:"cover",
@@ -121,11 +176,12 @@
      }
      const divStyle4={
        width:"100%",
+       height:"auto",
        background:"rgba(0, 0, 0, 1.00)"
      }
      const divStyle5={
        width:"100%",
-       height:"300px",
+       height:"150px",
        marginTop:"-20px",
        background:"rgba(0, 0, 0, 1.00)",
        color:"#ffffff"
@@ -134,15 +190,15 @@
        width:"30%",
        display:"flex",
        flexDirection:"column",
-       paddingLeft:"10%",
-       paddingTop:"7%"
+       paddingLeft:"1%",
+       paddingTop:"4%"
 
      }
      const contactRight={
        width:"70%",
        display:"flex",
        flexDirection:"column",
-       paddingLeft:"25%",
+       paddingLeft:"1%",
        paddingTop:"5%"
 
      }
@@ -216,7 +272,14 @@
          textTransform:"uppercase",
          marginTop:"30px",
          letterSpacing:"2px"
-       }
+      }
+      const pageLinks = [];
+
+      const preview = {};
+
+
+
+
      return (
        <div>
          <Helmet title="Blog" meta={[ { name: 'description', content: 'Description of Blog' }]}/>
@@ -241,46 +304,34 @@
            <div style={divStyle3}> </div>
 
            <div style={divStyle4}>
+             <li style={{marginBottom:"15px",
+               }}>
 
-             <div style={box2}>
+               <Link to="" ><h1 style={headerStyle}>the jump off</h1></Link>
+                   <p style={bodyStyle}> But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? </p>
+             </li>
 
-               <div style={contactLeft}>
-                 <p style={bodyStyle}> <h1 style={headerStyle}>
-                   Let's Work Together </h1>
-                  If you have any questions please use the contact form or choose a method below. </p>
-                   <p style={bodyStyle}> <h1 style={headerStyle}>
-                   Email: </h1> third.designs@gmail.com </p>
-                   <p style={bodyStyle}> <h1 style={headerStyle}>
-                   Phone: </h1> 706-840-1775 </p>
-                   <p style={bodyStyle}> <h1 style={headerStyle}>
-                   Twitter: </h1>  @the_III_ </p>
+             <div style={contactRight}>
+             <div style={contactLeft}>
+             <label style={bodyStyle}> Title <input value={this.state.title} onChange = {this.handleTitle} type="text" style={inputBox}/> </label>
+             </div>
 
-                 <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
-               </div>
+             <div style={contactLeft}>
+             <label style={bodyStyle}> Body <textarea value={this.state.body} onChange = {this.handleBody} type="text" style={inputBox2}></textarea> </label>
+             </div>
 
-               <div style={contactRight}>
-                 <div style={contactRow}>
-                   <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBox}/> </label>
+             <div style={contactLeft}>
+             <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
+             </div>
 
-                   <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBox}/> </label>
-                   </div>
-                 <div style={contactRow}>
-                   <label style={bodyStyle}>Phone Number <input onChange = {this.handlePhoneNumber} type="number" style={inputBox}/> </label>
+             <input type="file" onChange={this.handleImage}input style={bodyStyle}/>
 
-                   <label style={bodyStyle}>Your Website <input onChange = {this.handleYourWebsite} type="url" style={inputBox}/> </label>
-                   </div>
-                 <div style={contactRow}>
-                   <label style={bodyStyle}>Your Message <textarea onChange = {this.handleYourMessage} type="text" style={inputBox2}></textarea> </label>
-                 </div>
-
-
-
-
+             <img style={preview} src={this.state.preview}/>
              </div>
 
            </div>
 
-         </div>
+
 
          <Responsive minDeviceWidth={1024}>
            <div style={divStyle5}>
