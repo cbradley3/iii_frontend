@@ -11,7 +11,6 @@
  import FlatButton from "material-ui/FlatButton";
  import NavBar from 'components/NavBar2';
  import FooterNav2 from 'components/FooterNav2';
- import Parallax from 'react-simple-parallax';
 
  export default class Blog extends React.PureComponent {
    constructor(props){
@@ -70,6 +69,8 @@
   })
 }
    render() {
+
+
      const divStyle={
        textAlign:"center",
      }
@@ -81,18 +82,35 @@
        textTransform:"uppercase",
        letterSpacing:"6px",
        textAlign:"center",
-       marginTop:"100px"
+       marginTop:"280px"
      }
-     const reactSimpleParallaxBg={
-         background:"url(http://h4z.it/Image/ae8f02_MG_9509bwrev.jpg)",
+     const titleStyleMobile={
+       color:"#eeeeee",
+       fontSize:"2em",
+       fontFamily:"Quicksand",
+       fontWeight:"400",
+       textTransform:"uppercase",
+       letterSpacing:"6px",
+       textAlign:"center",
+       marginTop:"225px"
+     }
+     const divStyleParallax={
+       width:"100%",
+       height:"600px",
+       background:"url(http://h4z.it/Image/ae8f02_MG_9509bwrev.jpg)",
+       backgroundSize:"cover",
+       backgroundAttachment:"fixed",
+       backgroundPosition:"center",
+       backgroundRepeat:"no-repeat",
+     }
+       const divStyleMobileParallax={
          width:"100%",
-         height:"620px",
+         height:"500px",
+         background:"url(http://h4z.it/Image/ae8f02_MG_9509bwrev.jpg)",
          backgroundSize:"cover",
-         backgroundPosition:"center center"
-     }
-     const parallax={
-         top:"400px",
-         margin:"auto",
+         backgroundAttachment:"fixed",
+         backgroundPosition:"center",
+         backgroundRepeat:"no-repeat",
      }
      const box={
          top:"600px",
@@ -177,12 +195,14 @@
      const divStyle4={
        width:"100%",
        height:"auto",
-       background:"rgba(0, 0, 0, 1.00)"
+       background:"rgba(0, 0, 0, 1.00)",
+       color:"#ffffff"
+
      }
      const divStyle5={
        width:"100%",
        height:"150px",
-       marginTop:"-20px",
+       marginTop:"75px",
        background:"rgba(0, 0, 0, 1.00)",
        color:"#ffffff"
      }
@@ -214,12 +234,16 @@
        fontFamily:"Open Sans",
        fontWeight:"600",
        textTransform:"uppercase",
-
-     }
-     const mainStyle={
-
+   }
+   const mainStyle={
+     display:"flex",
+     flexDirection:"column",
+     background:"rgba(0, 0, 0, 1.00)",
      }
      const mainStyleMobile={
+       display:"flex",
+       flexDirection:"column",
+       color:"#191919",
 
      }
      const footerStyleMobile={
@@ -261,7 +285,8 @@
        fontWeight:"700",
        textAlign:"center",
        textTransform:"uppercase",
-       letterSpacing:"2px"
+       letterSpacing:"2px",
+       background:"rgba(0, 0, 0, 1.00)",
      }
      const mottoStyleMobile={
          color:"#ffffff",
@@ -271,7 +296,8 @@
          textAlign:"center",
          textTransform:"uppercase",
          marginTop:"30px",
-         letterSpacing:"2px"
+         letterSpacing:"2px",
+         background:"rgba(0, 0, 0, 1.00)",
       }
       const pageLinks = [];
 
@@ -293,15 +319,17 @@
            <main style={mainStyle}>
 
 
-           <div>
-               <div style={divStyle}>
-                   <Parallax style={box} className="parallax" speedDivider="2" backgroundStyle={reactSimpleParallaxBg}>
-                     Blog
-                   </Parallax>
+             <Responsive minDeviceWidth={1024}>
+               <div style={divStyleParallax}>
+                 <div style={titleStyle}> Blog </div>
                </div>
-           </div>
+             </Responsive>
 
-           <div style={divStyle3}> </div>
+             <Responsive maxDeviceWidth={1023}>
+               <div style={divStyleMobileParallax}>
+                 <div style={titleStyleMobile}> Blog </div>
+               </div>
+             </Responsive>
 
            <div style={divStyle4}>
              <li style={{marginBottom:"15px",
@@ -330,8 +358,6 @@
              </div>
 
            </div>
-
-
 
          <Responsive minDeviceWidth={1024}>
            <div style={divStyle5}>

@@ -89,29 +89,47 @@ handleYourMessage = (event) => {
     })
   }
   render() {
+
     const divStyle={
       textAlign:"center",
     }
-    const titleStyle={
-      color:"#eeeeee",
-      fontSize:"6em",
-      fontFamily:"Quicksand",
-      fontWeight:"300",
-      textTransform:"uppercase",
-      letterSpacing:"6px",
-      textAlign:"center",
-      marginTop:"100px"
-    }
-    const reactSimpleParallaxBg={
-        background:"url(http://h4z.it/Image/b72c1a_SC_0266bwrev.jpg)",
+      const titleStyle={
+        color:"#eeeeee",
+        fontSize:"6em",
+        fontFamily:"Quicksand",
+        fontWeight:"300",
+        textTransform:"uppercase",
+        letterSpacing:"6px",
+        textAlign:"center",
+        marginTop:"280px"
+      }
+      const titleStyleMobile={
+        color:"#eeeeee",
+        fontSize:"2em",
+        fontFamily:"Quicksand",
+        fontWeight:"400",
+        textTransform:"uppercase",
+        letterSpacing:"6px",
+        textAlign:"center",
+        marginTop:"225px"
+      }
+      const divStyleParallax={
         width:"100%",
-        height:"620px",
+        height:"600px",
+        background:"url(http://h4z.it/Image/b72c1a_SC_0266bwrev.jpg)",
         backgroundSize:"cover",
-        backgroundPosition:"center center"
-    }
-    const parallax={
-        top:"400px",
-        margin:"auto",
+        backgroundAttachment:"fixed",
+        backgroundPosition:"center",
+        backgroundRepeat:"no-repeat",
+      }
+        const divStyleMobileParallax={
+          width:"100%",
+          height:"500px",
+          background:"url(http://h4z.it/Image/b72c1a_SC_0266bwrev.jpg)",
+          backgroundSize:"cover",
+          backgroundAttachment:"fixed",
+          backgroundPosition:"center",
+          backgroundRepeat:"no-repeat",
     }
     const box={
         top:"600px",
@@ -141,7 +159,7 @@ handleYourMessage = (event) => {
     }
     const divStyle3={
       width:"100%",
-      height:"650px",
+      height:"100px",
       background:"rgba(0, 0, 0, 1.00)"
     }
     const box2={
@@ -199,8 +217,8 @@ handleYourMessage = (event) => {
     }
     const divStyle5={
       width:"100%",
-      height:"300px",
-      marginTop:"-20px",
+      height:"150px",
+      marginTop:"75px",
       background:"rgba(0, 0, 0, 1.00)",
       color:"#ffffff"
     }
@@ -235,10 +253,14 @@ handleYourMessage = (event) => {
 
     }
     const mainStyle={
-
-    }
-    const mainStyleMobile={
-
+      display:"flex",
+      flexDirection:"column",
+      background:"rgba(0, 0, 0, 1.00)",
+      }
+      const mainStyleMobile={
+        display:"flex",
+        flexDirection:"column",
+        color:"#191919",
     }
     const footerStyleMobile={
       display:"flex",
@@ -304,13 +326,18 @@ handleYourMessage = (event) => {
           <main style={mainStyle}>
 
 
-          <div>
-              <div style={divStyle}>
-                  <Parallax style={box} className="parallax" speedDivider="2" backgroundStyle={reactSimpleParallaxBg}>
-                    Contact
-                  </Parallax>
+            <Responsive minDeviceWidth={1024}>
+              <div style={divStyleParallax}>
+                <div style={titleStyle}> Contact </div>
               </div>
-          </div>
+            </Responsive>
+
+            <Responsive maxDeviceWidth={1023}>
+              <div style={divStyleMobileParallax}>
+                <div style={titleStyleMobile}> Contact </div>
+              </div>
+            </Responsive>
+
 
           <div style={divStyle3}> </div>
 
