@@ -20,9 +20,9 @@ export default class Contact extends React.PureComponent {
     this.state={
       name:"",
       email:"",
-      phoneNumber:"",
-      yourWebsite:"",
-      yourMessage:"",
+      number:"",
+      website:"",
+      message:"",
     }
   }
   handleName = (event) => {
@@ -35,44 +35,33 @@ export default class Contact extends React.PureComponent {
       email:event.target.value
     })
   }
-  handlePhoneNumer = (event) => {
+  handleNumber = (event) => {
     this.setState({
-      phoneNumber: event.target.value
+      number: event.target.value
     })
   }
-  handleYourWebsite = (event) => {
+  handleWebsite = (event) => {
     this.setState({
-      yourWebsite:event.target.value
+      website:event.target.value
     })
   }
-handleYourMessage = (event) => {
+handleMessage = (event) => {
   this.setState({
-    yourMessage: event.target.value
+    message: event.target.value
   })
 }
 
-  handleImage = (event) => {
-    event.preventDefault();
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    reader.onloadend = () => {
-      this.setState({
-        image: file,
-        preview: reader.result
-      })
-    }
-    reader.readAsDataURL(file);
-  }
-    storeArticle = () => {
+
+    storeContact = () => {
 
       var data = new FormData ();
       data.append("name", this.state.name);
       data.append("email", this.state.email);
-      data.append("phoneNumber", this.state.phoneNumber);
-      data.append("yourWebsite", this.state.yourWebsite);
-      data.append("yourMessage", this.state.yourMessage);
+      data.append("number", this.state.number);
+      data.append("website", this.state.website);
+      data.append("message", this.state.message);
 
-    fetch("http://localhost:8000/api/storeArticle",{
+    fetch("http://localhost:8000/api/storeContact",{
       method:"post",
       body:data
     })
@@ -156,6 +145,8 @@ handleYourMessage = (event) => {
       fontFamily:"Open Sans",
       fontWeight:"400",
       textAlign:"left",
+      display:"flex",
+      flexDirection:"column",
     }
     const divStyle3={
       width:"100%",
@@ -192,8 +183,8 @@ handleYourMessage = (event) => {
       fontFamily:"Open Sans",
       fontWeight:"400",
       textAlign:"left",
-      width:"625px",
-      height:"200",
+      width:"692px",
+      height:"200px",
       marginTop:"10px",
       marginBottom:"30px",
       marginRight:"30px",
@@ -207,7 +198,7 @@ handleYourMessage = (event) => {
       textAlign:"center",
       width:"100px",
       height:"50px",
-      margin:"40px",
+      marginTop:"210px",
       background:"rgba(0, 0, 0, 1.00)",
       border:"1px solid #ffffff",
     }
@@ -226,15 +217,15 @@ handleYourMessage = (event) => {
       width:"30%",
       display:"flex",
       flexDirection:"column",
-      paddingLeft:"10%",
-      paddingTop:"7%"
+      paddingLeft:"5%",
+      paddingTop:"8%"
 
     }
     const contactRight={
       width:"70%",
       display:"flex",
       flexDirection:"column",
-      paddingLeft:"25%",
+      paddingLeft:"17%",
       paddingTop:"5%"
 
     }
@@ -242,7 +233,7 @@ handleYourMessage = (event) => {
       display:"flex",
       flexDirection:"row",
       justifyContent:"space-around",
-      padding:"50px 150px 0px 0px"
+      padding:"50px 10px 0px 0px"
     }
     const headerStyle={
       color:"#ffffff",
@@ -356,7 +347,7 @@ handleYourMessage = (event) => {
                   <p style={bodyStyle}> <h1 style={headerStyle}>
                   Twitter: </h1>  @the_III_ </p>
 
-                <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
+                <input onTouchTap = {this.storeContact} type="submit" placeholder="Send Message" style={inputBox3}/>
               </div>
 
               <div style={contactRight}>
@@ -364,19 +355,15 @@ handleYourMessage = (event) => {
                   <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBox}/> </label>
 
                   <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBox}/> </label>
-                  </div>
-                <div style={contactRow}>
-                  <label style={bodyStyle}>Phone Number <input onChange = {this.handlePhoneNumber} type="number" style={inputBox}/> </label>
-
-                  <label style={bodyStyle}>Your Website <input onChange = {this.handleYourWebsite} type="url" style={inputBox}/> </label>
-                  </div>
-                <div style={contactRow}>
-                  <label style={bodyStyle}>Your Message <textarea onChange = {this.handleYourMessage} type="text" style={inputBox2}></textarea> </label>
                 </div>
+                <div style={contactRow}>
+                  <label style={bodyStyle}>Phone Number <input onChange = {this.handleNumber} type="number" style={inputBox}/> </label>
 
-
-
-
+                  <label style={bodyStyle}>Your Website <input onChange = {this.handleWebsite} type="url" style={inputBox}/> </label>
+                </div>
+                <div style={contactRow}>
+                  <label style={bodyStyle}>Your Message <textarea onChange = {this.handleMessage} type="text" style={inputBox2}></textarea> </label>
+                </div>
             </div>
 
           </div>
@@ -416,6 +403,9 @@ handleYourMessage = (event) => {
                 </Link>
                 <Link to="/Contact" style={linkStyle}>
                     Contact
+                </Link>
+                <Link to="/Dashboard" style={linkStyle}>
+                    Dashboard
                 </Link>
                 </nav>
             </div>

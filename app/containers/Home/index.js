@@ -652,6 +652,9 @@ export default class Home extends React.PureComponent {
                 <Link to="/Contact" style={linkStyle}>
                     Contact
                 </Link>
+                <Link to="/Dashboard" style={linkStyle}>
+                    Dashboard
+                </Link>
                 </nav>
             </div>
           </Responsive>

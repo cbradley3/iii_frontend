@@ -54,6 +54,9 @@ class FooterNav2 extends React.PureComponent {
           <Link to="/Contact" style={linkStyle}>
               Contact
           </Link>
+          <Link to="/Dashboard" style={linkStyle}>
+              Dashboard
+          </Link>
         </nav>
       </div>
     );

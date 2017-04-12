@@ -11,7 +11,7 @@ class FooterNav extends React.PureComponent {
 
   handleScroll = (num) => {
     window.scroll(0,num);
-  }  
+  }
   render() {
     const footerStyle={
       display:"flex",
@@ -66,6 +66,9 @@ class FooterNav extends React.PureComponent {
           </Link>
           <Link to="/Contact" style={linkStyle}>
               Contact
+          </Link>
+          <Link to="/Dashboard" style={linkStyle}>
+              Dashboard
           </Link>
         </nav>
       </div>

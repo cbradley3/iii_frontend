@@ -4,8 +4,13 @@
  *
  */
 
-import React from 'react';
-import Helmet from 'react-helmet';
+ import React from 'react';
+ import Helmet from 'react-helmet';
+ import Responsive from 'react-responsive';
+ import {Link} from "react-router";
+ import FlatButton from "material-ui/FlatButton";
+ import NavBar from 'components/NavBar2';
+ import FooterNav2 from 'components/FooterNav2';
 
 export default class Dashboard extends React.PureComponent {
   constructor(props){
@@ -75,18 +80,35 @@ handleImage = (event) => {
       textTransform:"uppercase",
       letterSpacing:"6px",
       textAlign:"center",
-      marginTop:"100px"
+      marginTop:"280px"
     }
-    const reactSimpleParallaxBg={
-        background:"url(http://h4z.it/Image/ae8f02_MG_9509bwrev.jpg)",
+    const titleStyleMobile={
+      color:"#eeeeee",
+      fontSize:"2em",
+      fontFamily:"Quicksand",
+      fontWeight:"400",
+      textTransform:"uppercase",
+      letterSpacing:"6px",
+      textAlign:"center",
+      marginTop:"225px"
+    }
+    const divStyleParallax={
+      width:"100%",
+      height:"600px",
+      background:"url(http://h4z.it/Image/73803a_SC_0785bwrev.jpg)",
+      backgroundSize:"cover",
+      backgroundAttachment:"fixed",
+      backgroundPosition:"center",
+      backgroundRepeat:"no-repeat",
+    }
+      const divStyleMobileParallax={
         width:"100%",
-        height:"620px",
+        height:"500px",
+        background:"url(http://h4z.it/Image/73803a_SC_0785bwrev.jpg)",
         backgroundSize:"cover",
-        backgroundPosition:"center center"
-    }
-    const parallax={
-        top:"400px",
-        margin:"auto",
+        backgroundAttachment:"fixed",
+        backgroundPosition:"center",
+        backgroundRepeat:"no-repeat",
     }
     const box={
         top:"600px",
@@ -113,6 +135,8 @@ handleImage = (event) => {
       fontFamily:"Open Sans",
       fontWeight:"400",
       textAlign:"left",
+      display:"flex",
+      flexDirection:"column",
     }
     const divStyle3={
       width:"100%",
@@ -140,7 +164,6 @@ handleImage = (event) => {
       marginTop:"10px",
       marginBottom:"30px",
       marginRight:"30px",
-      marginLeft:"0px",
       background:"#ffffff"
 
     }
@@ -165,19 +188,22 @@ handleImage = (event) => {
       textAlign:"center",
       width:"100px",
       height:"50px",
-      margin:"40px",
+      marginTop:"40px",
+      marginBottom:"100px",
       background:"rgba(0, 0, 0, 1.00)",
       border:"1px solid #ffffff",
     }
     const divStyle4={
       width:"100%",
       height:"auto",
-      background:"rgba(0, 0, 0, 1.00)"
+      background:"rgba(0, 0, 0, 1.00)",
+      color:"#ffffff"
+
     }
     const divStyle5={
       width:"100%",
       height:"150px",
-      marginTop:"-20px",
+      marginTop:"75px",
       background:"rgba(0, 0, 0, 1.00)",
       color:"#ffffff"
     }
@@ -209,12 +235,16 @@ handleImage = (event) => {
       fontFamily:"Open Sans",
       fontWeight:"600",
       textTransform:"uppercase",
-
-    }
-    const mainStyle={
-
+  }
+  const mainStyle={
+    display:"flex",
+    flexDirection:"column",
+    background:"rgba(0, 0, 0, 1.00)",
     }
     const mainStyleMobile={
+      display:"flex",
+      flexDirection:"column",
+      color:"#191919",
 
     }
     const footerStyleMobile={
@@ -256,7 +286,8 @@ handleImage = (event) => {
       fontWeight:"700",
       textAlign:"center",
       textTransform:"uppercase",
-      letterSpacing:"2px"
+      letterSpacing:"2px",
+      background:"rgba(0, 0, 0, 1.00)",
     }
     const mottoStyleMobile={
         color:"#ffffff",
@@ -266,7 +297,8 @@ handleImage = (event) => {
         textAlign:"center",
         textTransform:"uppercase",
         marginTop:"30px",
-        letterSpacing:"2px"
+        letterSpacing:"2px",
+        background:"rgba(0, 0, 0, 1.00)",
      }
      const pageLinks = [];
 
@@ -288,31 +320,27 @@ handleImage = (event) => {
           <main style={mainStyle}>
 
 
-          <div>
-              <div style={divStyle}>
-                  <Parallax style={box} className="parallax" speedDivider="2" backgroundStyle={reactSimpleParallaxBg}>
-                    Dashboard
-                  </Parallax>
+            <Responsive minDeviceWidth={1024}>
+              <div style={divStyleParallax}>
+                <div style={titleStyle}> Dashboard </div>
               </div>
-          </div>
+            </Responsive>
 
-          <div style={divStyle3}> </div>
+            <Responsive maxDeviceWidth={1023}>
+              <div style={divStyleMobileParallax}>
+                <div style={titleStyleMobile}> Blog </div>
+              </div>
+            </Responsive>
 
           <div style={divStyle4}>
-            <li style={{marginBottom:"15px",
-              }}>
-
-              <Link to="" ><h1 style={headerStyle}>the jump off</h1></Link>
-                  <p style={bodyStyle}> But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? </p>
-            </li>
 
             <div style={contactRight}>
             <div style={contactLeft}>
-            <label style={bodyStyle}> Title <input value={this.state.title} onChange = {this.handleTitle} type="text" style={inputBox}/> </label>
+              <label style={bodyStyle}> Title <input value={this.state.title} onChange = {this.handleTitle} type="text" style={inputBox}/> </label>
             </div>
 
             <div style={contactLeft}>
-            <label style={bodyStyle}> Body <textarea value={this.state.body} onChange = {this.handleBody} type="text" style={inputBox2}></textarea> </label>
+              <label style={bodyStyle}> Body <textarea value={this.state.body} onChange = {this.handleBody} type="text" style={inputBox2}></textarea> </label>
             </div>
 
             <div style={contactLeft}>
@@ -325,8 +353,6 @@ handleImage = (event) => {
             </div>
 
           </div>
-
-
 
         <Responsive minDeviceWidth={1024}>
           <div style={divStyle5}>
