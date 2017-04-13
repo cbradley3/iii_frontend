@@ -297,7 +297,7 @@ export default class Home extends React.PureComponent {
     }
     const titleStyleMobile={
       color:"#eeeeee",
-      fontSize:"2em",
+      fontSize:"4em",
       fontFamily:"Quicksand",
       fontWeight:"400",
       textTransform:"uppercase",
@@ -335,11 +335,13 @@ export default class Home extends React.PureComponent {
     }
     const bodyStyleMobile={
       color:"#191919",
-      fontSize:".80em",
+      fontSize:".9em",
       fontFamily:"Open Sans",
       fontWeight:"400",
       textAlign:"center",
-      marginTop:"30px"
+      marginTop:"30px",
+      paddingLeft:"5px",
+      paddingRight:"5px"
     }
     const navStyleMobile={
       display:"flex",
@@ -400,7 +402,7 @@ export default class Home extends React.PureComponent {
     }
     const mottoStyleMobile={
         color:"#191919",
-        fontSize:".90em",
+        fontSize:"1em",
         fontFamily:"Open Sans",
         fontWeight:"700",
         textAlign:"center",
@@ -462,36 +464,7 @@ export default class Home extends React.PureComponent {
         <Helmet title="Home" meta={[ { name: 'description', content: 'Description of Home' }]}/>
 
         <header>
-          <Responsive minDeviceWidth={1024}>
             <NavBar/>
-          </Responsive>
-
-          <Responsive maxDeviceWidth={1023}>
-          <div style={headStyleMobile}>
-            <img style={logoStyleMobile} src="http://h4z.it/Image/f02f70_llustration3.png"/>
-            <nav style={navStyleMobile}>
-
-              <Link to="/" style={linkStyle}>
-                  Photography
-              </Link>
-              <Link onTouchTap={()=>this.handleScroll(1000)} style={linkStyle}>
-                  Design
-              </Link>
-              <Link onTouchTap={()=>this.handleScroll(2100)} style={linkStyle}>
-                  Art
-              </Link>
-              <Link onTouchTap={()=>this.handleScroll(3250)} style style={linkStyle}>
-                  Development
-              </Link>
-              <Link to="/Blog" style={linkStyle}>
-                  Blog
-              </Link>
-              <Link to="/Contact" style={linkStyle}>
-                  Contact
-              </Link>
-              </nav>
-          </div>
-        </Responsive>
       </header>
 
         <main style={mainStyle}>
@@ -504,7 +477,7 @@ export default class Home extends React.PureComponent {
 
           <Responsive maxDeviceWidth={1023}>
             <div style={divStyleMobile}>
-              <div style={titleStyleMobile}> Photography </div>
+              <div style={titleStyleMobile}> Photo </div>
             </div>
           </Responsive>
 
@@ -580,7 +553,7 @@ export default class Home extends React.PureComponent {
 
           <Responsive maxDeviceWidth={1023}>
             <div style={divStyle7Mobile}>
-              <div style={titleStyleMobile}> Development </div>
+              <div style={titleStyleMobile}> Dev </div>
             </div>
           </Responsive>
 
@@ -640,10 +613,10 @@ export default class Home extends React.PureComponent {
                 <Link onTouchTap={()=>this.handleScroll(1000)} style={linkStyle}>
                     Design
                 </Link>
-                <Link onTouchTap={()=>this.handleScroll(2100)} style={linkStyle}>
+                <Link onTouchTap={()=>this.handleScroll(3700)} style={linkStyle}>
                     Art
                 </Link>
-                <Link onTouchTap={()=>this.handleScroll(3250)} style style={linkStyle}>
+                <Link onTouchTap={()=>this.handleScroll(6700)} style style={linkStyle}>
                     Development
                 </Link>
                 <Link to="/Blog" style={linkStyle}>
