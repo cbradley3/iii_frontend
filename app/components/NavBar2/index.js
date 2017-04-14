@@ -45,7 +45,7 @@ class NavBar2 extends React.PureComponent {
     const linkStyle={
                      textDecoration:"none",
                      color:"#000000",
-                     fontSize:"1.75em",
+                     fontSize:"2em",
                      fontFamily:"Josefin Sans",
                      fontStyle:"light",
                      fontWeight:"300",
@@ -69,7 +69,7 @@ class NavBar2 extends React.PureComponent {
                      margin:"0",
                      padding:"10px",
                      width:"100%",
-                     fontSize:"1em",
+                     fontSize:"2em",
                      fontFamily:"Josefin Sans",
                      fontStyle:"light",
                      fontWeight:"300",
@@ -80,7 +80,7 @@ class NavBar2 extends React.PureComponent {
     const linkStyle={
                      textDecoration:"none",
                      color:"#000000",
-                     fontSize:"1.5em",
+                     fontSize:"2em",
                      fontFamily:"Josefin Sans",
                      fontStyle:"light",
                      fontWeight:"300",
@@ -146,7 +146,7 @@ class NavBar2 extends React.PureComponent {
                      margin:"0",
                      padding:"10px",
                      width:"100%",
-                     fontSize:"1em",
+                     fontSize:"2em",
                      fontFamily:"Josefin Sans",
                      fontStyle:"light",
                      fontWeight:"300",
@@ -157,14 +157,13 @@ class NavBar2 extends React.PureComponent {
 
     const navStyle2={
       display:"flex",
-      flexDirection:"row",
+      flexDirection:"column",
       justifyContent:"center",
       height:"100px",
       alignItems:"center",
-      paddingRight:"10px",
       textDecoration:"none",
       color:"#000000",
-      fontSize:".90em",
+      fontSize:"1em",
       fontFamily:"Josefin Sans",
       fontStyle:"light",
       fontWeight:"300",
@@ -186,10 +185,10 @@ class NavBar2 extends React.PureComponent {
     const linkStyle2={
       display:"flex",
       flexDirection:"row",
-      paddingRight:"10px",
+      paddingRight:"30px",
       textDecoration:"none",
       color:"#000000",
-      fontSize:".75em",
+      fontSize:"1em",
       fontFamily:"Josefin Sans",
       fontStyle:"light",
       fontWeight:"300",
@@ -203,8 +202,6 @@ class NavBar2 extends React.PureComponent {
         display:"flex",
         flexDirection:"column",
         justifyContent:"center center",
-
-
 
     }
     return (

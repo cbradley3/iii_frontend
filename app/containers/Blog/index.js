@@ -17,58 +17,20 @@
    constructor(props){
    super(props);
    this.state={
-     title:"",
-     body:"",
-     image:"",
-     preview:"",
+     articles:[]
    }
  }
- handleTitle = (event) => {
-   this.setState({
-     title: event.target.value
+ componentWillMount(){
+   fetch('http://localhost:8000/api/getArticles')
+   .then(function(response){
+     return response.json();
    })
- }
- handleBody = (event) => {
-   this.setState({
-     body:event.target.value
-   })
- }
- handleImage = (event) => {
-   event.preventDefault();
-   let reader = new FileReader();
-   let file = event.target.files[0];
-   reader.onloadend = () => {
+   .then(function(json){
      this.setState({
-       image: file,
-       preview: reader.result
+       articles:json
      })
-   }
-   reader.readAsDataURL(file);
+   }.bind(this))
  }
-
-  storeArticle = () => {
-
-    var data = new FormData ();
-    data.append("title", this.state.title);
-    data.append("body", this.state.body);
-    data.append("image", this.state.image);
-
-  fetch("http://localhost:8000/api/storeArticle",{
-    method:"post",
-    body:data
-  })
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(json){
-    if(json.success){
-      alert("Success");
-    }
-    else if (json.error){
-      aler("Error");
-    }
-  })
-}
    render() {
 
 
@@ -279,27 +241,31 @@
 
           <Responsive minDeviceWidth={1024}>
            <div style={divStyle4}>
+             {this.state.articles.map((article,index) => (
+               <div style={{maxWidth:"960px", margin:"0 auto", marginBottom:"15px",
+                 }}>
 
-             <div style={{maxWidth:"960px", margin:"0 auto", marginBottom:"15px",
-               }}>
+                 <Link to="" ><h1 style={blogTitleStyle}>{article.title}</h1></Link>
+                     <p style={blogBodyStyle}>{article.body}</p>
+                     <p style={blogDateStyle}> 04.13.2017 </p>
+               </div>
+             ))}
 
-               <Link to="" ><h1 style={blogTitleStyle}>the jump off</h1></Link>
-                   <p style={blogBodyStyle}> But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? </p>
-                   <p style={blogDateStyle}> 04.13.2017 </p>
-             </div>
 
            </div>
            </Responsive>
 
            <Responsive maxDeviceWidth={1023}>
              <div style={divStyle4Mobile}>
-               <div style={{maxWidth:"300px", margin:"0 auto", marginBottom:"15px",
-                 }}>
+               {this.state.articles.map((article,index) => (
+                 <div style={{maxWidth:"960px", margin:"0 auto", marginBottom:"15px",
+                   }}>
 
-                 <Link to="" ><h1 style={blogTitleStyle}>the jump off</h1></Link>
-                     <p style={blogBodyStyle}> But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.  </p>
-                     <p style={blogDateStyle}> 04.13.2017 </p>
-               </div>
+                   <Link to="" ><h1 style={blogTitleStyle}>{article.title}</h1></Link>
+                       <p style={blogBodyStyle}>{article.body}</p>
+                       <p style={blogDateStyle}> 04.13.2017 </p>
+                 </div>
+               ))}
              </div>
            </Responsive>
 

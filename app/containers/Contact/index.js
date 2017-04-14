@@ -9,7 +9,7 @@ import Helmet from 'react-helmet';
 import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import FlatButton from "material-ui/FlatButton";
-import NavBar from 'components/NavBar2';
+import NavBar2 from 'components/NavBar2';
 import FooterNav2 from 'components/FooterNav2';
 import Parallax from 'react-simple-parallax';
 
@@ -94,7 +94,7 @@ handleMessage = (event) => {
       }
       const titleStyleMobile={
         color:"#eeeeee",
-        fontSize:"2em",
+        fontSize:"4em",
         fontFamily:"Quicksand",
         fontWeight:"400",
         textTransform:"uppercase",
@@ -175,6 +175,19 @@ handleMessage = (event) => {
       marginBottom:"30px",
       marginRight:"30px",
       background:"#ffffff"
+    }
+    const inputBoxMobile={
+      color:"#191919",
+      fontSize:"1em",
+      fontFamily:"Open Sans",
+      fontWeight:"400",
+      textAlign:"left",
+      width:"285px",
+      height:"40px",
+      marginTop:"10px",
+      marginBottom:"30px",
+      marginRight:"30px",
+      background:"#ffffff"
 
     }
     const inputBox2={
@@ -185,6 +198,19 @@ handleMessage = (event) => {
       textAlign:"left",
       width:"692px",
       height:"200px",
+      marginTop:"10px",
+      marginBottom:"30px",
+      marginRight:"30px",
+      background:"#ffffff"
+    }
+    const inputBox2Mobile={
+      color:"#191919",
+      fontSize:"1em",
+      fontFamily:"Open Sans",
+      fontWeight:"400",
+      textAlign:"left",
+      width:"285px",
+      height:"285px",
       marginTop:"10px",
       marginBottom:"30px",
       marginRight:"30px",
@@ -202,6 +228,18 @@ handleMessage = (event) => {
       background:"rgba(0, 0, 0, 1.00)",
       border:"1px solid #ffffff",
     }
+    const inputBox3Mobile={
+      color:"#ffffff",
+      fontSize:"1em",
+      fontFamily:"Open Sans",
+      fontWeight:"400",
+      textAlign:"center",
+      width:"100px",
+      height:"50px",
+      marginTop:"15px",
+      background:"rgba(0, 0, 0, 1.00)",
+      border:"1px solid #ffffff",
+    }
     const divStyle4={
       width:"100%",
       background:"rgba(0, 0, 0, 1.00)"
@@ -213,8 +251,21 @@ handleMessage = (event) => {
       background:"rgba(0, 0, 0, 1.00)",
       color:"#ffffff"
     }
+    const divStyle5Mobile={
+      width:"100%",
+      height:"75px",
+      marginTop:"37px",
+      background:"rgba(0, 0, 0, 1.00)",
+      color:"#ffffff"
+    }
     const contactLeft={
       width:"30%",
+      display:"flex",
+      flexDirection:"column",
+      paddingLeft:"5%",
+      paddingTop:"8%"
+    }
+    const contactLeftMobile={
       display:"flex",
       flexDirection:"column",
       paddingLeft:"5%",
@@ -234,6 +285,13 @@ handleMessage = (event) => {
       flexDirection:"row",
       justifyContent:"space-around",
       padding:"50px 10px 0px 0px"
+    }
+    const contactRowMobile={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"space-around",
+      paddingTop:"5px",
+      margin:"0 auto",
     }
     const headerStyle={
       color:"#ffffff",
@@ -309,9 +367,9 @@ handleMessage = (event) => {
         <Helmet title="Contact" meta={[ { name: 'description', content: 'Description of Contact' }]}/>
 
           <header>
-            <Responsive minDeviceWidth={1024}>
-              <NavBar/>
-            </Responsive>
+
+                <NavBar2/>
+
           </header>
 
           <main style={mainStyle}>
@@ -329,13 +387,13 @@ handleMessage = (event) => {
               </div>
             </Responsive>
 
+            <Responsive minDeviceWidth={1024}>
+              <div style={divStyle3}> </div>
+            </Responsive>
 
-          <div style={divStyle3}> </div>
-
+        <Responsive minDeviceWidth={1024}>
           <div style={divStyle4}>
-
             <div style={box2}>
-
               <div style={contactLeft}>
                 <p style={bodyStyle}> <h1 style={headerStyle}>
                   Let's Work Together </h1>
@@ -346,8 +404,7 @@ handleMessage = (event) => {
                   Phone: </h1> 706-840-1775 </p>
                   <p style={bodyStyle}> <h1 style={headerStyle}>
                   Twitter: </h1>  @the_III_ </p>
-
-                <input onTouchTap = {this.storeContact} type="submit" placeholder="Send Message" style={inputBox3}/>
+                  <input onTouchTap = {this.storeContact} type="submit" placeholder="Send Message" style={inputBox3}/>
               </div>
 
               <div style={contactRight}>
@@ -364,11 +421,46 @@ handleMessage = (event) => {
                 <div style={contactRow}>
                   <label style={bodyStyle}>Your Message <textarea onChange = {this.handleMessage} type="text" style={inputBox2}></textarea> </label>
                 </div>
+              </div>
             </div>
+          </div>
+        </Responsive>
 
+        <Responsive maxDeviceWidth={1023}>
+          <div style={divStyle4}>
+            <div style={contactLeftMobile}>
+              <p style={bodyStyle}> <h1 style={headerStyle}>
+                Let's Work Together </h1>
+               If you have any questions please use the contact form or choose a method below. </p>
+                <p style={bodyStyle}> <h1 style={headerStyle}>
+                Email: </h1> third.designs@gmail.com </p>
+                <p style={bodyStyle}> <h1 style={headerStyle}>
+                Phone: </h1> 706-840-1775 </p>
+                <p style={bodyStyle}> <h1 style={headerStyle}>
+                Twitter: </h1>  @the_III_ </p>
+            </div>
+          </div>
+          <div style={contactLeftMobile}>
+            <div style={contactRowMobile}>
+              <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBoxMobile}/> </label>
+              </div>
+              <div style={contactRowMobile}>
+              <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBoxMobile}/> </label>
+            </div>
+            <div style={contactRowMobile}>
+              <label style={bodyStyle}>Phone Number <input onChange = {this.handleNumber} type="number" style={inputBoxMobile}/> </label>
+              </div>
+              <div style={contactRowMobile}>
+              <label style={bodyStyle}>Your Website <input onChange = {this.handleWebsite} type="url" style={inputBoxMobile}/> </label>
+            </div>
+            <div style={contactRowMobile}>
+              <label style={bodyStyle}>Your Message <textarea onChange = {this.handleMessage} type="text" style={inputBox2Mobile}></textarea> </label>
+            </div>
+              <input onTouchTap = {this.storeContact} type="submit" placeholder="Send Message" style={inputBox3Mobile}/>
           </div>
 
-        </div>
+
+        </Responsive>
 
         <Responsive minDeviceWidth={1024}>
           <div style={divStyle5}>
@@ -377,7 +469,7 @@ handleMessage = (event) => {
         </Responsive>
 
         <Responsive maxDeviceWidth={1023}>
-        <div>
+        <div style={divStyle5Mobile}>
           <p style={mottoStyleMobile}> Design good. </p>
         </div>
         </Responsive>

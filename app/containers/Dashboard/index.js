@@ -9,7 +9,7 @@
  import Responsive from 'react-responsive';
  import {Link} from "react-router";
  import FlatButton from "material-ui/FlatButton";
- import NavBar from 'components/NavBar2';
+ import NavBar2 from 'components/NavBar2';
  import FooterNav2 from 'components/FooterNav2';
 
 export default class Dashboard extends React.PureComponent {
@@ -84,7 +84,7 @@ handleImage = (event) => {
     }
     const titleStyleMobile={
       color:"#eeeeee",
-      fontSize:"2em",
+      fontSize:"4em",
       fontFamily:"Quicksand",
       fontWeight:"400",
       textTransform:"uppercase",
@@ -165,6 +165,19 @@ handleImage = (event) => {
       marginBottom:"30px",
       marginRight:"30px",
       background:"#ffffff"
+    }
+    const inputBoxMobile={
+      color:"#191919",
+      fontSize:"1em",
+      fontFamily:"Open Sans",
+      fontWeight:"400",
+      textAlign:"left",
+      width:"285px",
+      height:"40px",
+      marginTop:"10px",
+      marginBottom:"30px",
+      marginRight:"30px",
+      background:"#ffffff"
 
     }
     const inputBox2={
@@ -173,8 +186,21 @@ handleImage = (event) => {
       fontFamily:"Open Sans",
       fontWeight:"400",
       textAlign:"left",
-      width:"625px",
-      height:"200",
+      width:"692px",
+      height:"200px",
+      marginTop:"10px",
+      marginBottom:"30px",
+      marginRight:"30px",
+      background:"#ffffff"
+    }
+    const inputBox2Mobile={
+      color:"#191919",
+      fontSize:"1em",
+      fontFamily:"Open Sans",
+      fontWeight:"400",
+      textAlign:"left",
+      width:"285px",
+      height:"285px",
       marginTop:"10px",
       marginBottom:"30px",
       marginRight:"30px",
@@ -188,8 +214,20 @@ handleImage = (event) => {
       textAlign:"center",
       width:"100px",
       height:"50px",
-      marginTop:"40px",
-      marginBottom:"100px",
+      marginTop:"210px",
+      background:"rgba(0, 0, 0, 1.00)",
+      border:"1px solid #ffffff",
+    }
+    const inputBox3Mobile={
+      color:"#ffffff",
+      fontSize:"1em",
+      fontFamily:"Open Sans",
+      fontWeight:"400",
+      textAlign:"center",
+      width:"100px",
+      height:"50px",
+      marginTop:"15px",
+      marginBottom:"40px",
       background:"rgba(0, 0, 0, 1.00)",
       border:"1px solid #ffffff",
     }
@@ -207,13 +245,25 @@ handleImage = (event) => {
       background:"rgba(0, 0, 0, 1.00)",
       color:"#ffffff"
     }
+    const divStyle5Mobile={
+      width:"100%",
+      height:"75px",
+      marginTop:"37px",
+      background:"rgba(0, 0, 0, 1.00)",
+      color:"#ffffff"
+    }
     const contactLeft={
       width:"30%",
       display:"flex",
       flexDirection:"column",
       paddingLeft:"1%",
       paddingTop:"4%"
-
+    }
+    const contactLeftMobile={
+      display:"flex",
+      flexDirection:"column",
+      paddingLeft:"5%",
+      paddingTop:"8%"
     }
     const contactRight={
       width:"70%",
@@ -228,6 +278,13 @@ handleImage = (event) => {
       flexDirection:"row",
       justifyContent:"space-around",
       padding:"50px 150px 0px 0px"
+    }
+    const contactRowMobile={
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"space-around",
+      paddingTop:"5px",
+      margin:"0 auto",
     }
     const headerStyle={
       color:"#ffffff",
@@ -304,17 +361,14 @@ handleImage = (event) => {
 
      const preview = {};
 
-
-
-
     return (
       <div>
         <Helmet title="Dashboard" meta={[ { name: 'description', content: 'Description of Dashboard' }]}/>
 
           <header>
-            <Responsive minDeviceWidth={1024}>
-              <NavBar/>
-            </Responsive>
+
+                <NavBar2/>
+
           </header>
 
           <main style={mainStyle}>
@@ -328,9 +382,11 @@ handleImage = (event) => {
 
             <Responsive maxDeviceWidth={1023}>
               <div style={divStyleMobileParallax}>
-                <div style={titleStyleMobile}> Blog </div>
+                <div style={titleStyleMobile}> Dash<br/>board </div>
               </div>
             </Responsive>
+
+        <Responsive minDeviceWidth={1024}>
 
           <div style={divStyle4}>
 
@@ -353,6 +409,33 @@ handleImage = (event) => {
             </div>
 
           </div>
+        </Responsive>
+
+        <Responsive maxDeviceWidth={1023}>
+          <div style={divStyle4}>
+
+            <div style={contactLeftMobile}>
+              <div style={contactRowMobile}>
+              <label style={bodyStyle}> Title <input value={this.state.title} onChange = {this.handleTitle} type="text" style={inputBoxMobile}/> </label>
+              </div>
+
+              <div style={contactRowMobile}>
+              <label style={bodyStyle}> Body <textarea value={this.state.body} onChange = {this.handleBody} type="text" style={inputBox2Mobile}></textarea> </label>
+              </div>
+
+              <div style={contactRowMobile}>
+              <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3Mobile}/>
+              </div>
+
+              <div style={contactRowMobile}>
+              <input type="file" onChange={this.handleImage}input style={bodyStyle}/>
+
+              <img style={preview} src={this.state.preview}/>
+              </div>
+            </div>
+
+          </div>
+        </Responsive>
 
         <Responsive minDeviceWidth={1024}>
           <div style={divStyle5}>
@@ -361,9 +444,9 @@ handleImage = (event) => {
         </Responsive>
 
         <Responsive maxDeviceWidth={1023}>
-        <div>
-          <p style={mottoStyleMobile}> Design good. </p>
-        </div>
+          <div style={divStyle5Mobile}>
+            <p style={mottoStyleMobile}> Design good. </p>
+          </div>
         </Responsive>
 
         </main>
