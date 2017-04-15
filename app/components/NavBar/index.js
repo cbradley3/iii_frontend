@@ -227,7 +227,7 @@ class NavBar extends React.PureComponent {
 
     const navStyle2={
       display:"flex",
-      flexDirection:"column",
+      flexDirection:"row",
       justifyContent:"center",
       height:"100px",
       alignItems:"center",
