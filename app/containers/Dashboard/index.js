@@ -61,10 +61,10 @@ handleImage = (event) => {
  })
  .then(function(json){
    if(json.success){
-     alert("Success");
+     alert("Success! You did it!");
    }
    else if (json.error){
-     aler("Error");
+     aler("You need to fill out all fields.");
    }
  })
 }
@@ -189,7 +189,7 @@ handleImage = (event) => {
       width:"692px",
       height:"200px",
       marginTop:"10px",
-      marginBottom:"30px",
+      marginBottom:"100px",
       marginRight:"30px",
       background:"#ffffff"
     }
@@ -214,7 +214,8 @@ handleImage = (event) => {
       textAlign:"center",
       width:"100px",
       height:"50px",
-      marginTop:"210px",
+      marginTop:"50px",
+      marginBottom:"125px",
       background:"rgba(0, 0, 0, 1.00)",
       border:"1px solid #ffffff",
     }
@@ -226,8 +227,8 @@ handleImage = (event) => {
       textAlign:"center",
       width:"100px",
       height:"50px",
-      marginTop:"15px",
-      marginBottom:"40px",
+      marginTop:"50px",
+      marginBottom:"20px",
       background:"rgba(0, 0, 0, 1.00)",
       border:"1px solid #ffffff",
     }
@@ -399,13 +400,13 @@ handleImage = (event) => {
               <label style={bodyStyle}> Body <textarea value={this.state.body} onChange = {this.handleBody} type="text" style={inputBox2}></textarea> </label>
             </div>
 
-            <div style={contactLeft}>
-            <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
-            </div>
-
             <input type="file" onChange={this.handleImage}input style={bodyStyle}/>
 
             <img style={preview} src={this.state.preview}/>
+            </div>
+
+            <div style={contactLeft}>
+            <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
             </div>
 
           </div>
@@ -424,14 +425,17 @@ handleImage = (event) => {
               </div>
 
               <div style={contactRowMobile}>
-              <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3Mobile}/>
-              </div>
-
-              <div style={contactRowMobile}>
               <input type="file" onChange={this.handleImage}input style={bodyStyle}/>
 
               <img style={preview} src={this.state.preview}/>
               </div>
+
+              <div style={contactRowMobile}>
+              <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3Mobile}/>
+              </div>
+
+
+
             </div>
 
           </div>

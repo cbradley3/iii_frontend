@@ -247,7 +247,7 @@
 
                  <Link to="" ><h1 style={blogTitleStyle}>{article.title}</h1></Link>
                      <p style={blogBodyStyle}>{article.body}</p>
-                     <p style={blogDateStyle}> 04.13.2017 </p>
+                     <p style={blogDateStyle}> {article.articleDate} </p>
                </div>
              ))}
 
@@ -258,12 +258,12 @@
            <Responsive maxDeviceWidth={1023}>
              <div style={divStyle4Mobile}>
                {this.state.articles.map((article,index) => (
-                 <div style={{maxWidth:"960px", margin:"0 auto", marginBottom:"15px",
+                 <div style={{maxWidth:"300px", margin:"0 auto", marginBottom:"15px",
                    }}>
 
                    <Link to="" ><h1 style={blogTitleStyle}>{article.title}</h1></Link>
                        <p style={blogBodyStyle}>{article.body}</p>
-                       <p style={blogDateStyle}> 04.13.2017 </p>
+                       <p style={blogDateStyle}> {article.articleDate} </p>
                  </div>
                ))}
              </div>

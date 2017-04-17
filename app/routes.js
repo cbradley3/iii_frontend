@@ -48,6 +48,15 @@ export default function createRoutes() {
             import('containers/Dashboard')
               .then(loadModule(cb))
               .catch(errorLoading);
+        },
+         },
+         {
+            path: '/single',
+            name: 'Single',
+            getComponent(nextState, cb) {
+              import('containers/Single')
+                .then(loadModule(cb))
+                .catch(errorLoading);
        },
         },
      {
