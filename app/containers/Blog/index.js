@@ -117,6 +117,13 @@
        background:"rgba(0, 0, 0, 1.00)",
        color:"#ffffff"
      }
+     const divStyle5Mobile={
+       width:"100%",
+       height:"75px",
+       marginTop:"37px",
+       background:"rgba(0, 0, 0, 1.00)",
+       color:"#ffffff"
+     }
      const headerStyle={
        color:"#ffffff",
        fontSize:"1.20em",
@@ -245,7 +252,7 @@
                <div style={{maxWidth:"960px", margin:"0 auto", marginBottom:"15px",
                  }}>
 
-                 <Link to="" ><h1 style={blogTitleStyle}>{article.title}</h1></Link>
+                 <Link to={`/single/${article.id}`} ><h1 style={blogTitleStyle}>{article.title}</h1></Link>
                      <p style={blogBodyStyle}>{article.body}</p>
                      <p style={blogDateStyle}> {article.articleDate} </p>
                </div>
@@ -261,7 +268,7 @@
                  <div style={{maxWidth:"300px", margin:"0 auto", marginBottom:"15px",
                    }}>
 
-                   <Link to="" ><h1 style={blogTitleStyle}>{article.title}</h1></Link>
+                   <Link to={`/single/${article.id}`}><h1 style={blogTitleStyle}>{article.title}</h1></Link>
                        <p style={blogBodyStyle}>{article.body}</p>
                        <p style={blogDateStyle}> {article.articleDate} </p>
                  </div>
@@ -278,9 +285,9 @@
          </Responsive>
 
          <Responsive maxDeviceWidth={1023}>
-         <div>
-           <p style={mottoStyleMobile}> Design good. </p>
-         </div>
+           <div style={divStyle5Mobile}>
+             <p style={mottoStyleMobile}> Design good. </p>
+           </div>
          </Responsive>
 
          </main>

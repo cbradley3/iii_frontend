@@ -53,7 +53,6 @@ handleMessage = (event) => {
 
 
     storeContact = () => {
-
       var data = new FormData ();
       data.append("name", this.state.name);
       data.append("email", this.state.email);
@@ -70,12 +69,20 @@ handleMessage = (event) => {
     })
     .then(function(json){
       if(json.success){
-        alert("Success");
+        this.setState({
+          name:"",
+          email:"",
+          number:"",
+          website:"",
+          message:"",
+        })
+        alert(json.success);
       }
+
       else if (json.error){
-        aler("Error");
+        alert(json.error);
       }
-    })
+    }.bind(this))
   }
   render() {
 
@@ -409,17 +416,17 @@ handleMessage = (event) => {
 
               <div style={contactRight}>
                 <div style={contactRow}>
-                  <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBox} value={this.state.name}/> </label>
 
-                  <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBox} value={this.state.email}/> </label>
                 </div>
                 <div style={contactRow}>
-                  <label style={bodyStyle}>Phone Number <input onChange = {this.handleNumber} type="number" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Phone Number <input onChange = {this.handleNumber} type="number" style={inputBox} value={this.state.number}/> </label>
 
-                  <label style={bodyStyle}>Your Website <input onChange = {this.handleWebsite} type="url" style={inputBox}/> </label>
+                  <label style={bodyStyle}>Your Website <input onChange = {this.handleWebsite} type="url" style={inputBox} value={this.state.website}/> </label>
                 </div>
                 <div style={contactRow}>
-                  <label style={bodyStyle}>Your Message <textarea onChange = {this.handleMessage} type="text" style={inputBox2}></textarea> </label>
+                  <label style={bodyStyle}>Your Message <textarea onChange = {this.handleMessage} type="text" style={inputBox2}>{this.state.message}</textarea> </label>
                 </div>
               </div>
             </div>
@@ -442,19 +449,19 @@ handleMessage = (event) => {
           </div>
           <div style={contactLeftMobile}>
             <div style={contactRowMobile}>
-              <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBoxMobile}/> </label>
+              <label style={bodyStyle}>Name <input onChange = {this.handleName} type="text" style={inputBoxMobile} value={this.state.name}/> </label>
               </div>
               <div style={contactRowMobile}>
-              <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBoxMobile}/> </label>
+              <label style={bodyStyle}>Email <input onChange = {this.handleEmail} type="email" style={inputBoxMobile} value={this.state.email}/> </label>
             </div>
             <div style={contactRowMobile}>
-              <label style={bodyStyle}>Phone Number <input onChange = {this.handleNumber} type="number" style={inputBoxMobile}/> </label>
+              <label style={bodyStyle}>Phone Number <input onChange = {this.handleNumber} type="number" style={inputBoxMobile} value={this.state.number}/> </label>
               </div>
               <div style={contactRowMobile}>
-              <label style={bodyStyle}>Your Website <input onChange = {this.handleWebsite} type="url" style={inputBoxMobile}/> </label>
+              <label style={bodyStyle}>Your Website <input onChange = {this.handleWebsite} type="url" style={inputBoxMobile} value={this.state.website}/> </label>
             </div>
             <div style={contactRowMobile}>
-              <label style={bodyStyle}>Your Message <textarea onChange = {this.handleMessage} type="text" style={inputBox2Mobile}></textarea> </label>
+              <label style={bodyStyle}>Your Message <textarea onChange = {this.handleMessage} type="text" style={inputBox2Mobile}>{this.state.message}</textarea> </label>
             </div>
               <input onTouchTap = {this.storeContact} type="submit" placeholder="Send Message" style={inputBox3Mobile}/>
           </div>
@@ -478,11 +485,11 @@ handleMessage = (event) => {
 
         <footer>
 
-            <Responsive minDeviceWidth={1024}>
-              <FooterNav2/>
-            </Responsive>
+          <Responsive minDeviceWidth={1024}>
+            <FooterNav2/>
+          </Responsive>
 
-            <Responsive maxDeviceWidth={1023}>
+          <Responsive maxDeviceWidth={1023}>
             <div style={headStyleMobile}>
 
               <nav style={footerStyleMobile}>
@@ -499,7 +506,7 @@ handleMessage = (event) => {
                 <Link to="/Dashboard" style={linkStyle}>
                     Dashboard
                 </Link>
-                </nav>
+              </nav>
             </div>
           </Responsive>
 

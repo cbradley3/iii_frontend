@@ -61,12 +61,18 @@ handleImage = (event) => {
  })
  .then(function(json){
    if(json.success){
+     this.setState({
+       title:"",
+       body:"",
+       image:"",
+       preview:"",
+     })
      alert("Success! You did it!");
    }
    else if (json.error){
-     aler("You need to fill out all fields.");
+     alert("You need to fill out all fields.");
    }
- })
+ }.bind(this))
 }
   render() {
     const divStyle={
@@ -393,14 +399,14 @@ handleImage = (event) => {
 
             <div style={contactRight}>
             <div style={contactLeft}>
-              <label style={bodyStyle}> Title <input value={this.state.title} onChange = {this.handleTitle} type="text" style={inputBox}/> </label>
+              <label style={bodyStyle}> Title <input onChange = {this.handleTitle} type="text" style={inputBox} value={this.state.title}/> </label>
             </div>
 
             <div style={contactLeft}>
-              <label style={bodyStyle}> Body <textarea value={this.state.body} onChange = {this.handleBody} type="text" style={inputBox2}></textarea> </label>
+              <label style={bodyStyle}> Body <textarea onChange = {this.handleBody} type="text" style={inputBox2}> {this.state.body}</textarea> </label>
             </div>
 
-            <input type="file" onChange={this.handleImage}input style={bodyStyle}/>
+            <input type="file" onChange={this.handleImage} style={bodyStyle}/>
 
             <img style={preview} src={this.state.preview}/>
             </div>
@@ -417,16 +423,18 @@ handleImage = (event) => {
 
             <div style={contactLeftMobile}>
               <div style={contactRowMobile}>
-              <label style={bodyStyle}> Title <input value={this.state.title} onChange = {this.handleTitle} type="text" style={inputBoxMobile}/> </label>
+              <label style={bodyStyle}> Title <input onChange = {this.handleTitle} type="text" style={inputBoxMobile} value={this.state.title}/> </label>
               </div>
 
               <div style={contactRowMobile}>
-              <label style={bodyStyle}> Body <textarea value={this.state.body} onChange = {this.handleBody} type="text" style={inputBox2Mobile}></textarea> </label>
+              <label style={bodyStyle}> Body <textarea onChange = {this.handleBody} type="text" style={inputBox2Mobile}>{this.state.body}</textarea> </label>
               </div>
 
               <div style={contactRowMobile}>
-              <input type="file" onChange={this.handleImage}input style={bodyStyle}/>
+              <input type="file" onChange={this.handleImage} style={bodyStyle}/>
+              </div>
 
+              <div style={contactRowMobile}>
               <img style={preview} src={this.state.preview}/>
               </div>
 
