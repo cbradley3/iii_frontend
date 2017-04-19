@@ -1,6 +1,6 @@
 /*
  *
- * Dashboard
+ * SignIn
  *
  */
 
@@ -12,45 +12,30 @@
  import NavBar2 from 'components/NavBar2';
  import FooterNav2 from 'components/FooterNav2';
 
-export default class Dashboard extends React.PureComponent {
+export default class SignIn extends React.PureComponent {
   constructor(props){
   super(props);
   this.state={
-    title:"",
-    body:"",
-    image:"",
-    preview:"",
+    email:"",
+    password:"",
   }
 }
-handleTitle = (event) => {
+handleEmail = (event) => {
   this.setState({
-    title: event.target.value
+    email: event.target.value
   })
 }
-handleBody = (event) => {
+handlePassword = (event) => {
   this.setState({
-    body:event.target.value
+    password:event.target.value
   })
-}
-handleImage = (event) => {
-  event.preventDefault();
-  let reader = new FileReader();
-  let file = event.target.files[0];
-  reader.onloadend = () => {
-    this.setState({
-      image: file,
-      preview: reader.result
-    })
-  }
-  reader.readAsDataURL(file);
 }
 
- storeArticle = () => {
+ storeSignIn = () => {
 
    var data = new FormData ();
-   data.append("title", this.state.title);
-   data.append("body", this.state.body);
-   data.append("image", this.state.image);
+   data.append("email", this.state.email);
+   data.append("password", this.state.password);
 
  fetch("http://localhost:8000/api/storeArticle",{
    method:"post",
@@ -62,10 +47,8 @@ handleImage = (event) => {
  .then(function(json){
    if(json.success){
      this.setState({
-       title:"",
-       body:"",
-       image:"",
-       preview:"",
+       email:"",
+       password:"",
      })
      alert("Success! You did it!");
    }
@@ -101,7 +84,7 @@ handleImage = (event) => {
     const divStyleParallax={
       width:"100%",
       height:"600px",
-      background:"url(http://h4z.it/Image/73803a_SC_0785bwrev.jpg)",
+      background:"url(http://h4z.it/Image/1a91d2_covery_bwrev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
       backgroundPosition:"center",
@@ -110,7 +93,7 @@ handleImage = (event) => {
       const divStyleMobileParallax={
         width:"100%",
         height:"500px",
-        background:"url(http://h4z.it/Image/73803a_SC_0785bwrev.jpg)",
+        background:"url(http://h4z.it/Image/1a91d2_covery_bwrev.jpg)",
         backgroundSize:"cover",
         backgroundAttachment:"fixed",
         backgroundPosition:"center",
@@ -370,7 +353,7 @@ handleImage = (event) => {
 
     return (
       <div>
-        <Helmet title="Dashboard" meta={[ { name: 'description', content: 'Description of Dashboard' }]}/>
+        <Helmet title="SignIn" meta={[ { name: 'description', content: 'Description of SignIn' }]}/>
 
           <header>
 
@@ -383,13 +366,13 @@ handleImage = (event) => {
 
             <Responsive minDeviceWidth={1024}>
               <div style={divStyleParallax}>
-                <div style={titleStyle}> Dashboard </div>
+                <div style={titleStyle}> Sign In </div>
               </div>
             </Responsive>
 
             <Responsive maxDeviceWidth={1023}>
               <div style={divStyleMobileParallax}>
-                <div style={titleStyleMobile}> Dash<br/>board </div>
+                <div style={titleStyleMobile}> Sign In </div>
               </div>
             </Responsive>
 
@@ -398,23 +381,18 @@ handleImage = (event) => {
           <div style={divStyle4}>
 
             <div style={contactRight}>
-            <div style={contactLeft}>
-              <label style={bodyStyle}> Title <input onChange = {this.handleTitle} type="text" style={inputBox} value={this.state.title}/> </label>
+              <div style={contactLeft}>
+                <label style={bodyStyle}> Email <input onChange = {this.handleEmail} style={inputBox} value={this.state.email}/> </label>
+              </div>
+
+              <div style={contactLeft}>
+                <label style={bodyStyle}> Password <input onChange = {this.handlePassword} style={inputBox} value={this.state.password}/> </label>
+              </div>
+
+              <div style={contactLeft}>
+              <input onTouchTap = {this.storeSignIn} type="submit" value="Sign In" style={inputBox3}/>
+              </div>
             </div>
-
-            <div style={contactLeft}>
-              <label style={bodyStyle}> Body <textarea onChange = {this.handleBody} style={inputBox2}>{this.state.body}</textarea> </label>
-            </div>
-
-            <input type="file" onChange={this.handleImage} style={bodyStyle}/>
-
-            <img style={preview} src={this.state.preview}/>
-            </div>
-
-            <div style={contactLeft}>
-            <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
-            </div>
-
           </div>
         </Responsive>
 
@@ -423,23 +401,15 @@ handleImage = (event) => {
 
             <div style={contactLeftMobile}>
               <div style={contactRowMobile}>
-              <label style={bodyStyle}> Title <input onChange = {this.handleTitle} type="text" style={inputBoxMobile} value={this.state.title}/> </label>
+              <label style={bodyStyle}> Email <input onChange = {this.handleEmail} style={inputBoxMobile} value={this.state.email}/> </label>
               </div>
 
               <div style={contactRowMobile}>
-              <label style={bodyStyle}> Body <textarea onChange = {this.handleBody} type="text" style={inputBox2Mobile}>{this.state.body}</textarea> </label>
-              </div>
+                <label style={bodyStyle}> Email <input onChange = {this.handlePassword} style={inputBoxMobile} value={this.state.password}/> </label>
+                </div>
 
               <div style={contactRowMobile}>
-              <input type="file" onChange={this.handleImage} style={bodyStyle}/>
-              </div>
-
-              <div style={contactRowMobile}>
-              <img style={preview} src={this.state.preview}/>
-              </div>
-
-              <div style={contactRowMobile}>
-              <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3Mobile}/>
+              <input onTouchTap = {this.storeSignIn} type="submit" vaule="Sign In" style={inputBox3Mobile}/>
               </div>
 
 

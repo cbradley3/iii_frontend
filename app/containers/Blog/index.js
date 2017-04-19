@@ -294,30 +294,7 @@
 
          <footer>
 
-             <Responsive minDeviceWidth={1024}>
-               <FooterNav2/>
-             </Responsive>
-
-             <Responsive maxDeviceWidth={1023}>
-             <div style={headStyleMobile}>
-
-               <nav style={footerStyleMobile}>
-
-                 <Link to="/" style={linkStyle}>
-                     Main
-                 </Link>
-                 <Link to="/Blog" style={linkStyle}>
-                     Blog
-                 </Link>
-                 <Link to="/Contact" style={linkStyle}>
-                     Contact
-                 </Link>
-                 <Link to="/Dashboard" style={linkStyle}>
-                     Dashboard
-                 </Link>
-                 </nav>
-             </div>
-           </Responsive>
+           <FooterNav2/>
 
          </footer>
 

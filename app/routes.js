@@ -57,6 +57,24 @@ export default function createRoutes() {
               import('containers/Single')
                 .then(loadModule(cb))
                 .catch(errorLoading);
+        },
+         },
+         {
+            path: '/signin',
+            name: 'SignIn',
+            getComponent(nextState, cb) {
+              import('containers/SignIn')
+                .then(loadModule(cb))
+                .catch(errorLoading);
+        },
+         },
+         {
+            path: '/signup',
+            name: 'SignUp',
+            getComponent(nextState, cb) {
+              import('containers/SignUp')
+                .then(loadModule(cb))
+                .catch(errorLoading);
        },
         },
      {

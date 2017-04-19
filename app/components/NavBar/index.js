@@ -64,6 +64,8 @@ class NavBar extends React.PureComponent {
           style={linkStyle}>Development</Link>
           <Link style={linkStyle} to= "/Blog"> Blog </Link>
           <Link style={linkStyle} to= "/Contact"> Contact </Link>
+          <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+          <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )
@@ -112,6 +114,8 @@ class NavBar extends React.PureComponent {
           style={linkStyle}>Development</Link>
           <Link style={linkStyle} to= "/Blog"> Blog </Link>
           <Link style={linkStyle} to= "/Contact"> Contact </Link>
+          <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+          <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )
@@ -127,6 +131,8 @@ class NavBar extends React.PureComponent {
          style={linkStyle}>Development</Link>
          <Link style={linkStyle} to= "/Blog"> Blog </Link>
          <Link style={linkStyle} to= "/Contact"> Contact </Link>
+         <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+         <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
        </nav>
      )
@@ -142,6 +148,8 @@ class NavBar extends React.PureComponent {
           style={linkStyle}>Development</Link>
           <Link style={linkStyle} to= "/Blog"> Blog </Link>
           <Link style={linkStyle} to= "/Contact"> Contact </Link>
+          <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+          <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )
@@ -157,6 +165,8 @@ class NavBar extends React.PureComponent {
            style={linkStyle}>Development</Link>
            <Link style={linkStyle} to= "/Blog"> Blog </Link>
            <Link style={linkStyle} to= "/Contact"> Contact </Link>
+           <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+           <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
            <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
          </nav>
        )
@@ -172,6 +182,8 @@ class NavBar extends React.PureComponent {
           style={linkStyle}>Development</Link>
           <Link style={linkStyle} to= "/Blog"> Blog </Link>
           <Link style={linkStyle} to= "/Contact"> Contact </Link>
+          <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+          <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
           <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
         </nav>
       )
@@ -187,6 +199,8 @@ class NavBar extends React.PureComponent {
          style={linkStyle}>Development</Link>
          <Link style={linkStyle} to= "/Blog"> Blog </Link>
          <Link style={linkStyle} to= "/Contact"> Contact </Link>
+         <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+         <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
        </nav>
      )
@@ -202,6 +216,8 @@ class NavBar extends React.PureComponent {
          style={linkStyle}>Development</Link>
          <Link style={linkStyle} to= "/Blog"> Blog </Link>
          <Link style={linkStyle} to= "/Contact"> Contact </Link>
+         <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
+         <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
        </nav>
      )
@@ -299,6 +315,12 @@ class NavBar extends React.PureComponent {
               </Link>
               <Link to="/Contact" style={linkStyle2}>
                   Contact
+              </Link>
+              <Link to="/SignUp" style={linkStyle2}>
+                  Sign Up
+              </Link>
+              <Link to="/SignIn" style={linkStyle2}>
+                  Sign In
               </Link>
               <Link to="/Dashboard" style={linkStyle2}>
                   Dashboard

@@ -1,6 +1,6 @@
 /*
  *
- * Dashboard
+ * SignUp
  *
  */
 
@@ -12,45 +12,37 @@
  import NavBar2 from 'components/NavBar2';
  import FooterNav2 from 'components/FooterNav2';
 
-export default class Dashboard extends React.PureComponent {
+export default class SignUp extends React.PureComponent {
   constructor(props){
   super(props);
   this.state={
-    title:"",
-    body:"",
-    image:"",
-    preview:"",
+    username:"",
+    email:"",
+    password:"",
   }
 }
-handleTitle = (event) => {
+handleUsername = (event) => {
   this.setState({
-    title: event.target.value
+    username: event.target.value
   })
 }
-handleBody = (event) => {
+handleEmail = (event) => {
   this.setState({
-    body:event.target.value
+    email: event.target.value
   })
 }
-handleImage = (event) => {
-  event.preventDefault();
-  let reader = new FileReader();
-  let file = event.target.files[0];
-  reader.onloadend = () => {
-    this.setState({
-      image: file,
-      preview: reader.result
-    })
-  }
-  reader.readAsDataURL(file);
+handlePassword = (event) => {
+  this.setState({
+    password:event.target.value
+  })
 }
 
- storeArticle = () => {
+ storeSignUp = () => {
 
    var data = new FormData ();
-   data.append("title", this.state.title);
-   data.append("body", this.state.body);
-   data.append("image", this.state.image);
+   data.append("username", this.state.username);
+   data.append("email", this.state.email);
+   data.append("password", this.state.password);
 
  fetch("http://localhost:8000/api/storeArticle",{
    method:"post",
@@ -62,10 +54,9 @@ handleImage = (event) => {
  .then(function(json){
    if(json.success){
      this.setState({
-       title:"",
-       body:"",
-       image:"",
-       preview:"",
+       username:"",
+       email:"",
+       password:"",
      })
      alert("Success! You did it!");
    }
@@ -101,7 +92,7 @@ handleImage = (event) => {
     const divStyleParallax={
       width:"100%",
       height:"600px",
-      background:"url(http://h4z.it/Image/73803a_SC_0785bwrev.jpg)",
+      background:"url(http://h4z.it/Image/f45759_lights_bwrev.jpg)",
       backgroundSize:"cover",
       backgroundAttachment:"fixed",
       backgroundPosition:"center",
@@ -110,7 +101,7 @@ handleImage = (event) => {
       const divStyleMobileParallax={
         width:"100%",
         height:"500px",
-        background:"url(http://h4z.it/Image/73803a_SC_0785bwrev.jpg)",
+        background:"url(http://h4z.it/Image/f45759_lights_bwrev.jpg)",
         backgroundSize:"cover",
         backgroundAttachment:"fixed",
         backgroundPosition:"center",
@@ -368,110 +359,105 @@ handleImage = (event) => {
 
      const preview = {};
 
-    return (
-      <div>
-        <Helmet title="Dashboard" meta={[ { name: 'description', content: 'Description of Dashboard' }]}/>
+  return (
+    <div>
+      <Helmet title="SignUp" meta={[ { name: 'description', content: 'Description of SignUp' }]}/>
 
-          <header>
+      <header>
 
-                <NavBar2/>
+            <NavBar2/>
 
-          </header>
+      </header>
 
-          <main style={mainStyle}>
+      <main style={mainStyle}>
 
-
-            <Responsive minDeviceWidth={1024}>
-              <div style={divStyleParallax}>
-                <div style={titleStyle}> Dashboard </div>
-              </div>
-            </Responsive>
-
-            <Responsive maxDeviceWidth={1023}>
-              <div style={divStyleMobileParallax}>
-                <div style={titleStyleMobile}> Dash<br/>board </div>
-              </div>
-            </Responsive>
 
         <Responsive minDeviceWidth={1024}>
-
-          <div style={divStyle4}>
-
-            <div style={contactRight}>
-            <div style={contactLeft}>
-              <label style={bodyStyle}> Title <input onChange = {this.handleTitle} type="text" style={inputBox} value={this.state.title}/> </label>
-            </div>
-
-            <div style={contactLeft}>
-              <label style={bodyStyle}> Body <textarea onChange = {this.handleBody} style={inputBox2}>{this.state.body}</textarea> </label>
-            </div>
-
-            <input type="file" onChange={this.handleImage} style={bodyStyle}/>
-
-            <img style={preview} src={this.state.preview}/>
-            </div>
-
-            <div style={contactLeft}>
-            <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3}/>
-            </div>
-
+          <div style={divStyleParallax}>
+            <div style={titleStyle}> Sign Up </div>
           </div>
         </Responsive>
 
         <Responsive maxDeviceWidth={1023}>
-          <div style={divStyle4}>
+          <div style={divStyleMobileParallax}>
+            <div style={titleStyleMobile}> Sign Up </div>
+          </div>
+        </Responsive>
 
-            <div style={contactLeftMobile}>
-              <div style={contactRowMobile}>
-              <label style={bodyStyle}> Title <input onChange = {this.handleTitle} type="text" style={inputBoxMobile} value={this.state.title}/> </label>
-              </div>
+    <Responsive minDeviceWidth={1024}>
 
-              <div style={contactRowMobile}>
-              <label style={bodyStyle}> Body <textarea onChange = {this.handleBody} type="text" style={inputBox2Mobile}>{this.state.body}</textarea> </label>
-              </div>
+      <div style={divStyle4}>
 
-              <div style={contactRowMobile}>
-              <input type="file" onChange={this.handleImage} style={bodyStyle}/>
-              </div>
+        <div style={contactRight}>
+          <div style={contactLeft}>
+            <label style={bodyStyle}> Username <input onChange = {this.handleUsername} style={inputBox} value={this.state.username}/> </label>
+          </div>
 
-              <div style={contactRowMobile}>
-              <img style={preview} src={this.state.preview}/>
-              </div>
+          <div style={contactLeft}>
+            <label style={bodyStyle}> Email <input onChange = {this.handleEmail} style={inputBox} value={this.state.email}/> </label>
+          </div>
 
-              <div style={contactRowMobile}>
-              <input onTouchTap = {this.storeArticle} type="submit" placeholder="Send Message" style={inputBox3Mobile}/>
-              </div>
+          <div style={contactLeft}>
+            <label style={bodyStyle}> Password <input onChange = {this.handlePassword} style={inputBox} value={this.state.password}/> </label>
+          </div>
 
+          <div style={contactLeft}>
+          <input onTouchTap = {this.storeSignUp} type="submit" value="Sign Up" style={inputBox3}/>
+          </div>
+        </div>
+      </div>
+    </Responsive>
 
+    <Responsive maxDeviceWidth={1023}>
+      <div style={divStyle4}>
 
+        <div style={contactLeftMobile}>
+          <div style={contactRowMobile}>
+          <label style={bodyStyle}> Username <input onChange = {this.handleUsername} style={inputBoxMobile} value={this.state.username}/> </label>
+          </div>
+
+          <div style={contactRowMobile}>
+          <label style={bodyStyle}> Email <input onChange = {this.handleEmail} style={inputBoxMobile} value={this.state.email}/> </label>
+          </div>
+
+          <div style={contactRowMobile}>
+            <label style={bodyStyle}> Email <input onChange = {this.handlePassword} style={inputBoxMobile} value={this.state.password}/> </label>
             </div>
 
+          <div style={contactRowMobile}>
+          <input onTouchTap = {this.storeSignUp} type="submit" value="Sign Up" style={inputBox3Mobile}/>
           </div>
-        </Responsive>
 
-        <Responsive minDeviceWidth={1024}>
-          <div style={divStyle5}>
-          <p style={mottoStyle}> Design good. </p>
-          </div>
-        </Responsive>
 
-        <Responsive maxDeviceWidth={1023}>
-          <div style={divStyle5Mobile}>
-            <p style={mottoStyleMobile}> Design good. </p>
-          </div>
-        </Responsive>
 
-        </main>
-
-        <footer>
-
-          <FooterNav2/>
-
-        </footer>
-
+        </div>
 
       </div>
+    </Responsive>
 
-          );
-        }
-      }
+    <Responsive minDeviceWidth={1024}>
+      <div style={divStyle5}>
+      <p style={mottoStyle}> Design good. </p>
+      </div>
+    </Responsive>
+
+    <Responsive maxDeviceWidth={1023}>
+      <div style={divStyle5Mobile}>
+        <p style={mottoStyleMobile}> Design good. </p>
+      </div>
+    </Responsive>
+
+    </main>
+
+    <footer>
+
+      <FooterNav2/>
+
+    </footer>
+
+
+  </div>
+
+      );
+    }
+  }
