@@ -44,7 +44,7 @@ handlePassword = (event) => {
    data.append("email", this.state.email);
    data.append("password", this.state.password);
 
- fetch("http://localhost:8000/api/storeArticle",{
+ fetch("http://localhost:8000/api/signup",{
    method:"post",
    body:data
  })
@@ -398,7 +398,7 @@ handlePassword = (event) => {
           </div>
 
           <div style={contactLeft}>
-            <label style={bodyStyle}> Password <input onChange = {this.handlePassword} style={inputBox} value={this.state.password}/> </label>
+            <label style={bodyStyle}> Password <input onChange = {this.handlePassword} style={inputBox} type="password" value={this.state.password}/> </label>
           </div>
 
           <div style={contactLeft}>
@@ -421,7 +421,7 @@ handlePassword = (event) => {
           </div>
 
           <div style={contactRowMobile}>
-            <label style={bodyStyle}> Email <input onChange = {this.handlePassword} style={inputBoxMobile} value={this.state.password}/> </label>
+            <label style={bodyStyle}> Email <input onChange = {this.handlePassword} style={inputBoxMobile} type="password" value={this.state.password}/> </label>
             </div>
 
           <div style={contactRowMobile}>

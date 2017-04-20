@@ -20,6 +20,7 @@ export default class Dashboard extends React.PureComponent {
     body:"",
     image:"",
     preview:"",
+    token:sessionStorage.getItem("token")
   }
 }
 handleTitle = (event) => {
@@ -52,7 +53,7 @@ handleImage = (event) => {
    data.append("body", this.state.body);
    data.append("image", this.state.image);
 
- fetch("http://localhost:8000/api/storeArticle",{
+ fetch("http://localhost:8000/api/storeArticle?token="+this.state.token,{
    method:"post",
    body:data
  })

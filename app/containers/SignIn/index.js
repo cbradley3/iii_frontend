@@ -37,7 +37,7 @@ handlePassword = (event) => {
    data.append("email", this.state.email);
    data.append("password", this.state.password);
 
- fetch("http://localhost:8000/api/storeArticle",{
+ fetch("http://localhost:8000/api/signin",{
    method:"post",
    body:data
  })
@@ -45,12 +45,17 @@ handlePassword = (event) => {
    return response.json();
  })
  .then(function(json){
-   if(json.success){
+   if(json.token !== false){
      this.setState({
        email:"",
        password:"",
      })
+
+     sessionStorage.setItem("token", json.token);
      alert("Success! You did it!");
+   }
+   else if (json.token === false){
+     alert("Invalid credentials");
    }
    else if (json.error){
      alert("You need to fill out all fields.");
@@ -386,7 +391,7 @@ handlePassword = (event) => {
               </div>
 
               <div style={contactLeft}>
-                <label style={bodyStyle}> Password <input onChange = {this.handlePassword} style={inputBox} value={this.state.password}/> </label>
+                <label style={bodyStyle}> Password <input onChange = {this.handlePassword} style={inputBox} type="password" value={this.state.password}/> </label>
               </div>
 
               <div style={contactLeft}>
@@ -405,7 +410,7 @@ handlePassword = (event) => {
               </div>
 
               <div style={contactRowMobile}>
-                <label style={bodyStyle}> Email <input onChange = {this.handlePassword} style={inputBoxMobile} value={this.state.password}/> </label>
+                <label style={bodyStyle}> Email <input onChange = {this.handlePassword} style={inputBoxMobile} type="password" value={this.state.password}/> </label>
                 </div>
 
               <div style={contactRowMobile}>
