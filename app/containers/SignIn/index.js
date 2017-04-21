@@ -410,7 +410,7 @@ handlePassword = (event) => {
               </div>
 
               <div style={contactRowMobile}>
-                <label style={bodyStyle}> Email <input onChange = {this.handlePassword} style={inputBoxMobile} type="password" value={this.state.password}/> </label>
+                <label style={bodyStyle}> Password <input onChange = {this.handlePassword} style={inputBoxMobile} type="password" value={this.state.password}/> </label>
                 </div>
 
               <div style={contactRowMobile}>

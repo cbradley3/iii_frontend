@@ -11,6 +11,7 @@
  import FlatButton from "material-ui/FlatButton";
  import NavBar2 from 'components/NavBar2';
  import FooterNav2 from 'components/FooterNav2';
+ import BlogSection from 'components/BlogSection';
 
 export default class Single extends React.PureComponent {
 
@@ -113,17 +114,10 @@ componentWillMount(){
         }
         const divStyle5Mobile={
           width:"100%",
-          height:"auto",
+          height:"75px",
+          marginTop:"37px",
           background:"rgba(0, 0, 0, 1.00)",
-          marginTop:"80px",
-          color:"#ffffff"
-        }
-        const divStyle6={
-          width:"100%",
-          height:"auto",
-          background:"rgba(0, 0, 0, 1.00)",
-          marginTop:"80px",
-          color:"#ffffff"
+          color:"#ffffff",
         }
         const divStyle7Mobile={
           width:"100%",
@@ -258,8 +252,8 @@ componentWillMount(){
            textAlign:"left",
            width:"300px",
            height:"50px",
-           marginTop:"10px",
-           marginBottom:"30px",
+           marginTop:"5px",
+           marginBottom:"5px",
            marginRight:"30px",
            background:"#ffffff"
          }
@@ -272,7 +266,7 @@ componentWillMount(){
            width:"285px",
            height:"40px",
            marginTop:"10px",
-           marginBottom:"30px",
+           marginBottom:"5px",
            marginRight:"30px",
            background:"#ffffff"
 
@@ -285,8 +279,8 @@ componentWillMount(){
            textAlign:"left",
            width:"692px",
            height:"200px",
-           marginTop:"10px",
-           marginBottom:"100px",
+           marginTop:"5px",
+           marginBottom:"10px",
            marginRight:"30px",
            background:"#ffffff"
          }
@@ -347,7 +341,7 @@ componentWillMount(){
            display:"flex",
            flexDirection:"column",
            paddingLeft:"1%",
-           paddingTop:"5%"
+
          }
          const contactRow={
            display:"flex",
@@ -365,14 +359,12 @@ componentWillMount(){
     return (
       <div>
         <Helmet title="Single" meta={[ { name: 'description', content: 'Description of Single' }]}/>
+
           <header>
-
-                <NavBar2/>
-
+            <NavBar2/>
           </header>
 
           <main style={mainStyle}>
-
 
             <Responsive minDeviceWidth={1024}>
               <div style={divStyleParallax}>
@@ -392,7 +384,7 @@ componentWillMount(){
                  <div style={{maxWidth:"960px", margin:"0 auto", marginBottom:"15px",
                    }}>
                      <p style={blogBodyStyle}>{this.state.article.body}</p>
-                     <img style={imageStyle}img src={this.state.article.image}/>
+                     <img style={imageStyle} src={this.state.article.image}/>
                      <p style={blogDateStyle}>{this.state.article.articleDate}</p>
                    </div>
 
@@ -407,7 +399,7 @@ componentWillMount(){
                    <p style={blogBodyStyle}>{this.state.article.body}</p>
                  </div>
 
-                 <div><img style={imageStyleMobile}img src={this.state.article.image}/></div>
+                 <div><img style={imageStyleMobile} src={this.state.article.image}/></div>
 
                  <div style={{maxWidth:"300px", margin:"0 auto", marginBottom:"15px",}}>
                  <p style={blogDateStyle}> {this.state.article.articleDate} </p>
@@ -416,45 +408,7 @@ componentWillMount(){
                </div>
              </Responsive>
 
-             <Responsive minDeviceWidth={1024}>
-
-               <div style={divStyle5}>
-
-                 <div style={contactRight}>
-                   <div style={contactLeft}>
-                     <label style={bodyStyle}> Name <input onChange = {this.handleName} type="text" style={inputBox} value={this.state.name}/> </label>
-                   </div>
-
-                   <div style={contactLeft}>
-                     <label style={bodyStyle}> Comment <textarea onChange = {this.handleComment} style={inputBox2}>{this.state.comment}</textarea> </label>
-                   </div>
-                 </div>
-
-                 <div style={contactLeft}>
-                 <input onTouchTap = {this.storeComment} type="submit" placeholder="Send Comment" style={inputBox3}/>
-                 </div>
-
-               </div>
-             </Responsive>
-
-             <Responsive maxDeviceWidth={1023}>
-               <div style={divStyle5}>
-
-                 <div style={contactLeftMobile}>
-                   <div style={contactRowMobile}>
-                   <label style={bodyStyle}> Name <input onChange = {this.handleName} type="text" style={inputBoxMobile} value={this.state.title}/> </label>
-                   </div>
-
-                   <div style={contactRowMobile}>
-                   <label style={bodyStyle}> Comment <textarea onChange = {this.handleComment} type="text" style={inputBox2Mobile}>{this.state.comment}</textarea> </label>
-                   </div>
-
-                   <div style={contactRowMobile}>
-                   <input onTouchTap = {this.storeComment} type="submit" placeholder="Send Comment" style={inputBox3Mobile}/>
-                   </div>
-                 </div>
-               </div>
-             </Responsive>
+             <BlogSection/>
 
       <Responsive minDeviceWidth={1024}>
         <div style={divStyle7}>
@@ -471,10 +425,9 @@ componentWillMount(){
       </main>
 
       <footer>
-
         <FooterNav2/>
-
       </footer>
+
       </div>
     );
   }
