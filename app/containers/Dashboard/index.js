@@ -25,7 +25,7 @@ export default class Dashboard extends React.PureComponent {
 }
 handleTitle = (event) => {
   this.setState({
-    title: event.target.value
+    title:event.target.value
   })
 }
 handleBody = (event) => {
