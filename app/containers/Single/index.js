@@ -408,7 +408,7 @@ componentWillMount(){
                </div>
              </Responsive>
 
-             <BlogSection/>
+             <BlogSection singleID={this.props.params.id}/>
 
       <Responsive minDeviceWidth={1024}>
         <div style={divStyle7}>

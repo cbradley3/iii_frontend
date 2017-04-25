@@ -20,7 +20,7 @@ class BlogSection extends React.PureComponent {
    }
   }
   componentWillMount(){
-    fetch("")
+    fetch("http://localhost:8000/api/getComments/"+this.props.singleID)
     .then(function(response){
       return response.json();
     })
@@ -33,18 +33,19 @@ class BlogSection extends React.PureComponent {
 
   handleComment = (event) => {
     this.setState({
-      comment:event.target.value
+      commentBody:event.target.value
     })
   }
 
   storeComment = () => {
 
     var data = new FormData ();
-    data.append("comment", this.state.comment);
+    data.append("body", this.state.commentBody);
+    data.append("articleID", this.props.singleID);
 
-  fetch(" "+this.state.token,{
+  fetch("http://localhost:8000/api/storeComments?token="+this.state.token,{
     method:"post",
-    comment:data
+    body:data
   })
   .then(function(response){
     return response.json();
@@ -52,7 +53,7 @@ class BlogSection extends React.PureComponent {
   .then(function(json){
     if(json.success){
       this.setState({
-        comment:"",
+        commentBody:"",
       })
       alert("Success! Thanks for commenting!");
     }
@@ -60,6 +61,7 @@ class BlogSection extends React.PureComponent {
       alert("You need to fill out all fields.");
     }
   }.bind(this))
+    this.forceUpdate();
  }
 
   render() {
@@ -106,6 +108,19 @@ class BlogSection extends React.PureComponent {
       marginBottom:"30px",
       background:"#ffffff"
     }
+    const inputBox2Mobile={
+      color:"#191919",
+      border:"1px solid #ffffff",
+      fontSize:"1em",
+      fontFamily:"Open Sans",
+      fontWeight:"400",
+      textAlign:"left",
+      width:"300px",
+      height:"100px",
+      marginTop:"10px",
+      marginBottom:"30px",
+      background:"#ffffff"
+    }
     const inputBoxMobile={
       color:"#191919",
       fontSize:"1em",
@@ -130,6 +145,19 @@ class BlogSection extends React.PureComponent {
       flexDirection:"column",
       justifyContent:"center",
       marginBottom:"10px",
+      overflow:"hidden",
+    }
+    const commentBoxMobile={
+      maxWidth:"300px",
+      textAlign:"left",
+      height:"auto",
+      border:"1px solid #ffffff",
+      margin:"0 auto",
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      marginBottom:"10px",
+      overflow:"hidden",
     }
     const nameStyle={
       color:"#ffffff",
@@ -176,25 +204,41 @@ class BlogSection extends React.PureComponent {
     }
     return (
       <div>
-
+        <Responsive minDeviceWidth={1024}>
           <div style={{maxWidth:"640px", margin:"0 auto", marginBottom:"15px",
             }}>
             <div style={blogHeaderStyle}> leave a comment </div>
-            <textarea onChange = {this.handleComment} style={inputBox2}>{this.state.comment}</textarea>
+            <textarea onChange = {this.handleComment} style={inputBox2}>{this.state.commentBody}</textarea>
 
             <input onTouchTap = {this.storeComment} type="submit" value="Submit" style={inputBox3}/>
 
             {this.state.comments.map((comment,index) => (
               <div style={commentBox}>
-                <div style={nameStyle}>Charlie</div>
-                <div style={commentStyle}>Charlie your blog is the best! Very entertaing!</div>
-                <div style={dateStyle}>4.21.17</div>
+                <div style={nameStyle}>{comment.name}</div>
+                <div style={commentStyle}>{comment.body}</div>
+                <div style={dateStyle}>{comment.commentDate}</div>
               </div>
             ))}
-
           </div>
+        </Responsive>
 
+        <Responsive maxDeviceWidth={1023}>
+          <div style={{maxWidth:"300px", margin:"0 auto", marginBottom:"15px",
+            }}>
+            <div style={blogHeaderStyle}> leave a comment </div>
+            <textarea onChange = {this.handleComment} style={inputBox2Mobile}>{this.state.commentBody}</textarea>
 
+            <input onTouchTap = {this.storeComment} type="submit" value="Submit" style={inputBox3}/>
+
+            {this.state.comments.map((comment,index) => (
+              <div style={commentBoxMobile}>
+                <div style={nameStyle}>{comment.name}</div>
+                <div style={commentStyle}>{comment.body}</div>
+                <div style={dateStyle}>{comment.commentDate}</div>
+              </div>
+            ))}
+          </div>
+        </Responsive>
       </div>
     );
   }
