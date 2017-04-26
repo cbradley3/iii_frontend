@@ -226,6 +226,12 @@ class NavBar2 extends React.PureComponent {
               <Link to="/Blog" style={linkStyle2}>
                   Blog
               </Link>
+              <Link to="/SignUp" style={linkStyle2}>
+                  Sign Up
+              </Link>
+              <Link to="/SignIn" style={linkStyle2}>
+                  Sign In
+              </Link>
               <Link to="/Contact" style={linkStyle2}>
                   Contact
               </Link>
