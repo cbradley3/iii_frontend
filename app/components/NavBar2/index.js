@@ -16,6 +16,8 @@ class NavBar2 extends React.PureComponent {
     super(props);
     this.state = {
       menuOpen:false,
+      token:sessionStorage.getItem("token"),
+      user:sessionStorage.getItem("user")
     }
   }
 
@@ -54,99 +56,33 @@ class NavBar2 extends React.PureComponent {
 
     if(this.state.menuOpen == true)
     {
+      var dashLink = <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>;
+      var signUpLink = <Link to="/SignUp" style={linkStyle}>Sign Up</Link>;
+      var signInLink = <Link to="/SignIn" style={linkStyle}>Sign In</Link>;
+  
+      if(this.state.token === undefined){
+        dashLink="";
+      }
+      else{
+        signUpLink="";
+        signInLink="";
+        if(this.state.user.roleID !== 1){
+          dashLink="";
+        }
+      }
       return(
         <nav style={nav}>
           <Link to="/" style={linkStyle}>Main</Link>
           <Link style={linkStyle} to= "/Blog"> Blog </Link>
           <Link style={linkStyle} to= "/Contact"> Contact </Link>
-          <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
-          <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
-          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
+          {signUpLink}
+          {signInLink}
+          {dashLink}
         </nav>
       )
     }
   }
-  activeMenu = () => {
-    const navStyle={
-                     margin:"0",
-                     padding:"10px",
-                     width:"100%",
-                     fontSize:"2em",
-                     fontFamily:"Josefin Sans",
-                     fontStyle:"light",
-                     fontWeight:"300",
-                     borderTop:"2px solid #000000",
-                     borderBottom:"1px solid #000000",
-                     textAlign:"center",
-                     }
-    const linkStyle={
-                     textDecoration:"none",
-                     color:"#000000",
-                     fontSize:"2em",
-                     fontFamily:"Josefin Sans",
-                     fontStyle:"light",
-                     fontWeight:"300",
-                     textAlign:"center"
-                     }
-    const activeStyle={
-                      color:"#000000",
-                      fontSize:"2em",
-                      fontFamily:"Josefin Sans",
-                      fontStyle:"light",
-                      fontWeight:"300",
-                      textAlign:"center",
-                      textDecoration:"none"
 
-  }
-    if(this.props.page == "Main"){
-      return(
-        <nav style={navStyle}>
-          <Link to="/" style={linkStyle}>Main</Link>
-          <Link style={linkStyle} to= "/Blog"> Blog </Link>
-          <Link style={linkStyle} to= "/Contact"> Contact </Link>
-          <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
-          <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
-          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
-        </nav>
-      )
-    }
-     else if (this.props.page == "blog") {
-      return(
-        <nav style={navStyle}>
-          <Link to="/" style={linkStyle}>Main</Link>
-          <Link style={linkStyle} to= "/Blog"> Blog </Link>
-          <Link style={linkStyle} to= "/Contact"> Contact </Link>
-          <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
-          <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
-          <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
-        </nav>
-      )
-    }
-    else if (this.props.page == "Contact") {
-     return(
-       <nav style={navStyle}>
-         <Link to="/" style={linkStyle}>Main</Link>
-         <Link style={linkStyle} to= "/Blog"> Blog </Link>
-         <Link style={linkStyle} to= "/Contact"> Contact </Link>
-         <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
-         <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
-         <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
-       </nav>
-     )
-    }
-    else if (this.props.page == "Dashboard") {
-     return(
-       <nav style={navStyle}>
-         <Link to="/" style={linkStyle}>Main</Link>
-         <Link style={linkStyle} to= "/Blog"> Blog </Link>
-         <Link style={linkStyle} to= "/Contact"> Contact </Link>
-         <Link style={linkStyle} to= "/SignUp"> Sign Up </Link>
-         <Link style={linkStyle} to= "/SignIn"> Sign In </Link>
-         <Link style={linkStyle} to= "/Dashboard"> Dashboard </Link>
-       </nav>
-     )
-    }
-  }
 
   handleScroll = (num) => {
     window.scroll(0,num);
@@ -212,7 +148,20 @@ class NavBar2 extends React.PureComponent {
         display:"flex",
         flexDirection:"column",
         justifyContent:"center center",
+    }
+    var dashLink = <Link style={linkStyle2} to= "/Dashboard"> Dashboard </Link>;
+    var signUpLink = <Link to="/SignUp" style={linkStyle2}>Sign Up</Link>;
+    var signInLink = <Link to="/SignIn" style={linkStyle2}>Sign In</Link>;
 
+    if(this.state.token === undefined){
+      dashLink="";
+    }
+    else{
+      signUpLink="";
+      signInLink="";
+      if(this.state.user.roleID !== 1){
+        dashLink="";
+      }
     }
     return (
       <div style={divStyle2Mobile}>
@@ -226,12 +175,8 @@ class NavBar2 extends React.PureComponent {
               <Link to="/Blog" style={linkStyle2}>
                   Blog
               </Link>
-              <Link to="/SignUp" style={linkStyle2}>
-                  Sign Up
-              </Link>
-              <Link to="/SignIn" style={linkStyle2}>
-                  Sign In
-              </Link>
+              {signUpLink}
+              {signInLink}
               <Link to="/Contact" style={linkStyle2}>
                   Contact
               </Link>

@@ -52,7 +52,15 @@ handlePassword = (event) => {
      })
 
      sessionStorage.setItem("token", json.token);
-     alert("Success! You did it!");
+     fetch("http://localhost:8000/api/getUser?token="+json.token)
+     .then(function(response){
+       return response.json();
+     })
+     .then(function(json){
+       sessionStorage.setItem("user", json);
+       alert("Success! You did it!");
+     })
+
    }
    else if (json.token === false){
      alert("Invalid credentials");
