@@ -21,6 +21,11 @@ class NavBar extends React.PureComponent {
     }
   }
 
+  componentWillMount()
+  {
+    console.log(this.state.token);
+  }
+
   handleMenu = () => {
     if(this.state.menuOpen == false)
     {
@@ -60,7 +65,7 @@ class NavBar extends React.PureComponent {
       var signUpLink = <Link to="/SignUp" style={linkStyle}>Sign Up</Link>;
       var signInLink = <Link to="/SignIn" style={linkStyle}>Sign In</Link>;
 
-      if(this.state.token === undefined){
+      if(this.state.token === null){
         dashLink="";
       }
       else{
@@ -156,11 +161,11 @@ class NavBar extends React.PureComponent {
 
 
     }
-    var dashLink = <Link style={linkStyle2} to= "/Dashboard"> Dashboard </Link>;
+    var dashLink = <Link style={linkStyle2} to="/Dashboard">Dashboard</Link>;
     var signUpLink = <Link to="/SignUp" style={linkStyle2}>Sign Up</Link>;
     var signInLink = <Link to="/SignIn" style={linkStyle2}>Sign In</Link>;
 
-    if(this.state.token === undefined){
+    if(this.state.token === null){
       dashLink="";
     }
     else{
