@@ -57,7 +57,7 @@ handlePassword = (event) => {
        return response.json();
      })
      .then(function(json){
-       sessionStorage.setItem("user", json);
+       sessionStorage.setItem("user", JSON.stringify(json));
        alert("Success! You did it!");
      })
 
