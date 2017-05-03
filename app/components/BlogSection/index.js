@@ -20,7 +20,7 @@ class BlogSection extends React.PureComponent {
    }
   }
   componentWillMount(){
-    fetch("http://localhost:8000/api/getComments/"+this.props.singleID)
+    fetch("http://cb-iii.com/api/getComments/"+this.props.singleID)
     .then(function(response){
       return response.json();
     })
@@ -43,9 +43,12 @@ class BlogSection extends React.PureComponent {
     data.append("body", this.state.commentBody);
     data.append("articleID", this.props.singleID);
 
-  fetch("http://localhost:8000/api/storeComments?token="+this.state.token,{
+  fetch("http://cb-iii.com/api/storeComments?token="+this.state.token,{
     method:"post",
-    body:data
+    body:data,
+    headers:{
+      "Authorization":"Bearer "+this.state.token
+    }
   })
   .then(function(response){
     return response.json();

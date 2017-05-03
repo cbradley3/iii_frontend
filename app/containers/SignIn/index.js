@@ -37,7 +37,7 @@ handlePassword = (event) => {
    data.append("email", this.state.email);
    data.append("password", this.state.password);
 
- fetch("http://localhost:8000/api/signin",{
+ fetch("http://cb-iii.com/api/signin",{
    method:"post",
    body:data
  })
@@ -52,7 +52,11 @@ handlePassword = (event) => {
      })
 
      sessionStorage.setItem("token", json.token);
-     fetch("http://localhost:8000/api/getUser?token="+json.token)
+     fetch("http://cb-iii.com/api/getUser?token="+json.token, {
+       headers:{
+         "Authorization":"Bearer "+json.token
+       }
+     })
      .then(function(response){
        return response.json();
      })

@@ -21,7 +21,7 @@
    }
  }
  componentWillMount(){
-   fetch('http://localhost:8000/api/getArticles')
+   fetch('http://cb-iii.com/api/getArticles')
    .then(function(response){
      return response.json();
    })

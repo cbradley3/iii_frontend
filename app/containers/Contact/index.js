@@ -60,7 +60,7 @@ handleMessage = (event) => {
       data.append("website", this.state.website);
       data.append("message", this.state.message);
 
-    fetch("http://localhost:8000/api/storeContact",{
+    fetch("http://cb-iii.com/api/storeContact",{
       method:"post",
       body:data
     })
@@ -122,9 +122,12 @@ handleMessage = (event) => {
           width:"100%",
           height:"500px",
           background:"url(http://h4z.it/Image/b72c1a_SC_0266bwrev.jpg)",
+          WebkitBackgroundSize:"cover",
+          MozBackgroundSize:"cover",
+          OBackgroundSize:"cover",
           backgroundSize:"cover",
           backgroundAttachment:"fixed",
-          backgroundPosition:"center",
+          backgroundPosition:"center center",
           backgroundRepeat:"no-repeat",
     }
     const box={

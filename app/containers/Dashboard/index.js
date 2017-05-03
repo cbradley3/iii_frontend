@@ -53,9 +53,12 @@ handleImage = (event) => {
    data.append("body", this.state.body);
    data.append("image", this.state.image);
 
- fetch("http://localhost:8000/api/storeArticle?token="+this.state.token,{
+ fetch("http://cb-iii.com/api/storeArticle?token="+this.state.token,{
    method:"post",
-   body:data
+   body:data,
+   headers:{
+     "Authorization":"Bearer "+this.state.token
+   }
  })
  .then(function(response){
    return response.json();

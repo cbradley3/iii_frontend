@@ -44,7 +44,7 @@ handlePassword = (event) => {
    data.append("email", this.state.email);
    data.append("password", this.state.password);
 
- fetch("http://localhost:8000/api/signup",{
+ fetch("http://cb-iii.com/api/signup",{
    method:"post",
    body:data
  })
