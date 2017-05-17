@@ -487,7 +487,8 @@ export default class Home extends React.PureComponent {
                     Designer | Artist | Photographer | Developer
                   </h1>
               <div style={bodyStyle}>
-                <p style={bodyStyle}> I am an Augutsa based designer with over 18 years of professional experience in the creative industry. </p>
+                <p style={bodyStyle}> I am an Augusta based designer with over 18 years of professional experience in the creative industry.
+                  I am always seeking new challenges in print & web design, graphic arts, fine arts and technology. My passions are professional and creative growth. </p>
                 <p style={bodyStyle}> I focus on creating solutions for my clients. </p>
               </div>
               <div style={mottoStyle}>
@@ -502,7 +503,8 @@ export default class Home extends React.PureComponent {
                     Designer | Artist | Photographer | Developer
                   </h1>
               <div style={bodyStyleMobile}>
-                <p style={bodyStyleMobile}> I am an Augutsa based designer with over 18 years of professional experience in the creative industry. </p>
+                <p style={bodyStyleMobile}> I am an Augusta based designer with over 18 years of professional experience in the creative industry.
+                  I am always seeking new challenges in print & web design, graphic arts, fine arts and technology. My passions are professional and creative growth. </p>
                 <p style={bodyStyleMobile}> I focus on creating solutions for my clients. </p>
               </div>
               <div style={mottoStyleMobile}>
@@ -561,8 +563,11 @@ export default class Home extends React.PureComponent {
           <div style={divStyle8}>
               <div style={bodyStyle}>
                 <p style={bodyStyle}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
-                <p style={bodyStyle}> HTML | Cascading Style Sheets (CSS) | Javascript </p>
-                <p style={bodyStyle}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
+                <p style={bodyStyle}> Operating Systems: Windows 10, MacOS, Linux Debian <br/>
+                Web Development Languages: PHP, JavaScript, HTML5, CSS3, TypeScript <br/>
+                Database: MySQL <br/>
+                Web Development Software: Atom, Git, Postman, XAMPP, NGINX <br/>
+                Frameworks: Laravel, ReactJS </p>
               </div>
                 <div style={mottoStyle}>
                 <p style={mottoStyle}> Design good. </p>
@@ -574,8 +579,11 @@ export default class Home extends React.PureComponent {
           <div style={divStyle8Mobile}>
               <div style={bodyStyleMobile}>
                 <p style={bodyStyleMobile}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
-                <p style={bodyStyleMobile}> HTML | Cascading Style Sheets (CSS) | Javascript </p>
-                <p style={bodyStyleMobile}> PHP | MySQL / MariaDB | Linux (Ubuntu and Cloud Hosting) </p>
+                <p style={bodyStyleMobile}> Operating Systems: Windows 10, MacOS, Linux Debian <br/>
+                Web Development Languages: PHP, JavaScript, HTML5, CSS3, TypeScript <br/>
+                Database: MySQL <br/>
+                Web Development Software: Atom, Git, Postman, XAMPP, NGINX <br/>
+                Frameworks: Laravel, ReactJS </p>
               </div>
                 <div style={mottoStyleMobile}>
                 <p style={mottoStyleMobile}> Design good. </p>
