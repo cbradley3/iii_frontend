@@ -156,7 +156,7 @@ export default class Home extends React.PureComponent {
     }
     const divStyle2Mobile={
       width:"100%",
-      height:"250px",
+      height:"300px",
       background:"rgba(0, 0, 0, 0.03)"
     }
     const divStyle3={
