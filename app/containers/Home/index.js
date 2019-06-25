@@ -258,12 +258,12 @@ export default class Home extends React.PureComponent {
     const divStyle8={
       width:"100%",
       height:"225px",
-      background:"rgba(0, 0, 0, 0.03)"
+      background:"#ffffff"
     }
     const divStyle8Mobile={
       width:"100%",
       height:"auto",
-      background:"rgba(0, 0, 0, 0.03)"
+      background:"#ffffff"
     }
     const divStyle9={
       display:"flex",
