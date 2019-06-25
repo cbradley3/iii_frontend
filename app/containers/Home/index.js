@@ -10,7 +10,6 @@ import Responsive from 'react-responsive';
 import {Link} from "react-router";
 import FlatButton from "material-ui/FlatButton";
 import NavBar from 'components/NavBar';
-import FooterNav from 'components/FooterNav';
 import Gallery from 'react-photo-gallery';
 export default class Home extends React.PureComponent {
   constructor(props) {
@@ -151,12 +150,12 @@ export default class Home extends React.PureComponent {
     }
     const divStyle2={
       width:"100%",
-      height:"250px",
+      height:"275px",
       background:"rgba(0, 0, 0, 0.03)"
     }
     const divStyle2Mobile={
       width:"100%",
-      height:"300px",
+      height:"325px",
       background:"rgba(0, 0, 0, 0.03)"
     }
     const divStyle3={
@@ -330,7 +329,8 @@ export default class Home extends React.PureComponent {
       fontSize:".95em",
       fontFamily:"Open Sans",
       fontWeight:"400",
-      textAlign:"center",
+      textAlign:"left",
+      width:"700px",
       marginTop:"30px"
     }
     const bodyStyleMobile={
@@ -471,45 +471,43 @@ export default class Home extends React.PureComponent {
 
           <Responsive minDeviceWidth={1024}>
             <div style={divStyle}>
-              <div style={titleStyle}> Photography </div>
+              <div style={titleStyle}> Web Development </div>
             </div>
           </Responsive>
 
           <Responsive maxDeviceWidth={1023}>
             <div style={divStyleMobile}>
-              <div style={titleStyleMobile}> Photo </div>
+              <div style={titleStyleMobile}> Web Dev </div>
             </div>
           </Responsive>
 
         <Responsive minDeviceWidth={1024}>
           <div style={divStyle2}>
                   <h1 style={headerStyle}>
-                    Designer | Artist | Photographer | Developer
+                    Charlie Bradley III
                   </h1>
+                  <center>
               <div style={bodyStyle}>
-                <p style={bodyStyle}> I am an Augusta based designer with over 18 years of professional experience in the creative industry.
-                  I am always seeking new challenges in print & web design, graphic arts, fine arts and technology. My passions are professional and creative growth. </p>
-                <p style={bodyStyle}> I focus on creating solutions for my clients. </p>
+                <p style={bodyStyle}> I am a Full Stack Web Developer with over 20 years of professional experience in the design industry.
+                My web development skills include Front and Back End Development, LEMP Stack, ReactJS, React Bootstrap, JavaScript, HTML5, CSS3, Angular, TypeScript, NGINX , PHP, Laravel, MySQL, WordPress, Beaver Builder, Joomla, Atom, Git, Postman, XAMPP, Windows 10, MacOS, Linux Debian.</p>
+                <p style={bodyStyle}> You should hire me.</p>
               </div>
-              <div style={mottoStyle}>
-                <p style={mottoStyle}> Design good. </p>
-              </div>
+                  </center>
           </div>
         </Responsive>
 
         <Responsive maxDeviceWidth={1023}>
           <div style={divStyle2Mobile}>
                   <h1 style={headerStyleMobile}>
-                    Designer | Artist | Photographer | Developer
+                    Charlie Bradley III
                   </h1>
+                  <center>
               <div style={bodyStyleMobile}>
-                <p style={bodyStyleMobile}> I am an Augusta based designer with over 18 years of professional experience in the creative industry.
-                  I am always seeking new challenges in print & web design, graphic arts, fine arts and technology. My passions are professional and creative growth. </p>
-                <p style={bodyStyleMobile}> I focus on creating solutions for my clients. </p>
+                <p style={bodyStyleMobile}> I am a Full Stack Web Developer with over 20 years of professional experience in the design industry.
+                My web development skills include Front and Back End Development, LEMP Stack, ReactJS, React Bootstrap, JavaScript, HTML5, CSS3, Angular, TypeScript, NGINX , PHP, Laravel, MySQL, WordPress, Beaver Builder, Joomla, Atom, Git, Postman, XAMPP, Windows 10, MacOS, Linux Debian.</p>
+                <p style={bodyStyleMobile}> You should hire me. </p>
               </div>
-              <div style={mottoStyleMobile}>
-                <p style={mottoStyleMobile}> Design good. </p>
-              </div>
+                </center>
           </div>
         </Responsive>
 
@@ -543,51 +541,52 @@ export default class Home extends React.PureComponent {
             </div>
           </Responsive>
 
+
           <div style={wrapper}>
           <Gallery style={divStyle6} photos={this.state.photos3} cols={4}/>
           </div>
 
           <Responsive minDeviceWidth={1024}>
             <div style={divStyle7}>
-              <div style={titleStyle}> Development </div>
+              <div style={titleStyle}>Photography </div>
             </div>
           </Responsive>
 
           <Responsive maxDeviceWidth={1023}>
             <div style={divStyle7Mobile}>
-              <div style={titleStyleMobile}> Dev </div>
+              <div style={titleStyleMobile}> Photo </div>
             </div>
           </Responsive>
 
           <Responsive minDeviceWidth={1024}>
+          <h1 style={headerStyle}>
+            Developer | Designer | Photographer | Artist
+          </h1>
+          <center>
           <div style={divStyle8}>
               <div style={bodyStyle}>
-                <p style={bodyStyle}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
-                <p style={bodyStyle}> Operating Systems: Windows 10, MacOS, Linux Debian <br/>
-                Web Development Languages: PHP, JavaScript, HTML5, CSS3, TypeScript <br/>
-                Database: MySQL <br/>
-                Web Development Software: Atom, Git, Postman, XAMPP, NGINX <br/>
-                Frameworks: Laravel, ReactJS </p>
+                <p style={bodyStyle}> I have a great love for art, design and photography. Those skills include Adobe Creative Suite: Illustrator, Photoshop, Indesign, Adobe Acrobat, Quark Xpress, AdWatch,
+                Breeze, Microsoft Office: Word, Powerpoint, Publisher, Excel, Pre-Flight, HTML, Page Layout, Logo Design, Illustration, Digital and 35mm Photography, Film Development, Composition, Typography, Color Theory, Photo Correction and Manipulation.</p>
               </div>
-                <div style={mottoStyle}>
-                <p style={mottoStyle}> Design good. </p>
-                </div>
+              <div style={mottoStyle}>
+                Think Three.
+              </div>
           </div>
+          </center>
           </Responsive>
 
           <Responsive maxDeviceWidth={1023}>
           <div style={divStyle8Mobile}>
+          <h1 style={headerStyleMobile}>
+            Developer | Designer | Photographer | Artist
+          </h1>
               <div style={bodyStyleMobile}>
-                <p style={bodyStyleMobile}> With Full Stack Development skills, knowledge of both front and back end development are at my client's disposal. </p>
-                <p style={bodyStyleMobile}> Operating Systems: Windows 10, MacOS, Linux Debian <br/>
-                Web Development Languages: PHP, JavaScript, HTML5, CSS3, TypeScript <br/>
-                Database: MySQL <br/>
-                Web Development Software: Atom, Git, Postman, XAMPP, NGINX <br/>
-                Frameworks: Laravel, ReactJS </p>
+                <p style={bodyStyleMobile}> I have a great love for art, design and photography. Those skills include Adobe Creative Suite: Illustrator, Photoshop, Indesign, Adobe Acrobat, Quark Xpress, AdWatch,
+                Breeze, Microsoft Office: Word, Powerpoint, Publisher, Excel, Pre-Flight, HTML, Page Layout, Logo Design, Illustration, Digital and 35mm Photography, Film Development, Composition, Typography, Color Theory, Photo Correction and Manipulation.</p>
               </div>
-                <div style={mottoStyleMobile}>
-                <p style={mottoStyleMobile}> Design good. </p>
-                </div>
+              <div style={mottoStyleMobile}>
+                Think Three.
+              </div>
           </div>
           </Responsive>
 
@@ -604,12 +603,6 @@ export default class Home extends React.PureComponent {
           </Responsive>
 
         </main>
-
-        <footer>
-
-          <FooterNav/>
-
-        </footer>
 
       </div>
     );

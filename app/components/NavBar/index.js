@@ -73,11 +73,10 @@ class NavBar extends React.PureComponent {
       return(
         <nav style={nav}>
           <Link style={linkStyle} to= "/"> Home </Link>
-          <Link to="/" style={linkStyle}>Photography</Link>
+          <Link to="/" style={linkStyle}>Web Development</Link>
           <Link onTouchTap={()=>this.handleScroll(1000)} style={linkStyle}>Design</Link>
           <Link onTouchTap={()=>this.handleScroll(3700)} style={linkStyle}>Art</Link>
-          <Link onTouchTap={()=>this.handleScroll(6700)}
-          style={linkStyle}>Development</Link>
+          <Link onTouchTap={()=>this.handleScroll(6700)} style={linkStyle}>Photography</Link>
           <Link style={linkStyle} to= "/Blog"> Blog </Link>
           <Link style={linkStyle} to= "/Contact"> Contact </Link>
           {signUpLink}
@@ -177,7 +176,7 @@ class NavBar extends React.PureComponent {
             <img style={logoStyle} src="http://h4z.it/Image/f02f70_llustration3.png"/>
             <nav style={navStyle2}>
               <Link to="/" style={linkStyle2}>
-                  Photography
+                  Web Development
               </Link>
               <Link onTouchTap={()=>this.handleScroll(1000)} style={linkStyle2}>
                   Design
@@ -186,7 +185,7 @@ class NavBar extends React.PureComponent {
                   Art
               </Link>
               <Link onTouchTap={()=>this.handleScroll(3250)} style={linkStyle2}>
-                  Development
+                  Photography
               </Link>
               <Link to="/Blog" style={linkStyle2}>
                   Blog

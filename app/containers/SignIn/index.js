@@ -10,7 +10,6 @@
  import {Link} from "react-router";
  import FlatButton from "material-ui/FlatButton";
  import NavBar2 from 'components/NavBar2';
- import FooterNav2 from 'components/FooterNav2';
 
 export default class SignIn extends React.PureComponent {
   constructor(props){
@@ -438,24 +437,17 @@ handlePassword = (event) => {
 
         <Responsive minDeviceWidth={1024}>
           <div style={divStyle5}>
-          <p style={mottoStyle}> Design good. </p>
+          <p style={mottoStyle}> Think Three. </p>
           </div>
         </Responsive>
 
         <Responsive maxDeviceWidth={1023}>
           <div style={divStyle5Mobile}>
-            <p style={mottoStyleMobile}> Design good. </p>
+            <p style={mottoStyleMobile}> Think Three. </p>
           </div>
         </Responsive>
 
         </main>
-
-        <footer>
-
-          <FooterNav2/>
-
-        </footer>
-
 
       </div>
 
