@@ -490,7 +490,7 @@ export default class Home extends React.PureComponent {
               <div style={bodyStyle}>
                 <p style={bodyStyle}> I am a Full Stack Web Developer with over 20 years of professional experience in the design industry.
                 My web development skills include Front and Back End Development, LEMP Stack, ReactJS, React Bootstrap, JavaScript, HTML5, CSS3, Angular, TypeScript, NGINX , PHP, Laravel, MySQL, WordPress, Beaver Builder, Joomla, Atom, Git, Postman, XAMPP, Windows 10, MacOS, Linux Debian.</p>
-                <p style={bodyStyle}> You should hire me.</p>
+                <p style={bodyStyle}> You should hire me!</p>
               </div>
                   </center>
           </div>
@@ -505,7 +505,7 @@ export default class Home extends React.PureComponent {
               <div style={bodyStyleMobile}>
                 <p style={bodyStyleMobile}> I am a Full Stack Web Developer with over 20 years of professional experience in the design industry.
                 My web development skills include Front and Back End Development, LEMP Stack, ReactJS, React Bootstrap, JavaScript, HTML5, CSS3, Angular, TypeScript, NGINX , PHP, Laravel, MySQL, WordPress, Beaver Builder, Joomla, Atom, Git, Postman, XAMPP, Windows 10, MacOS, Linux Debian.</p>
-                <p style={bodyStyleMobile}> You should hire me. </p>
+                <p style={bodyStyleMobile}> You should hire me!</p>
               </div>
                 </center>
           </div>
